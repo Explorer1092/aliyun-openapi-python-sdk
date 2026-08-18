@@ -31,6 +31,21 @@ class CreateOrUpdateSilencePolicyRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_MatchingRules(self): # String
+		return self.get_body_params().get('MatchingRules')
+
+	def set_MatchingRules(self, MatchingRules):  # String
+		self.add_body_params('MatchingRules', MatchingRules)
+	def get_TimeSlots(self): # String
+		return self.get_query_params().get('TimeSlots')
+
+	def set_TimeSlots(self, TimeSlots):  # String
+		self.add_query_param('TimeSlots', TimeSlots)
+	def get_EffectiveTimeType(self): # String
+		return self.get_query_params().get('EffectiveTimeType')
+
+	def set_EffectiveTimeType(self, EffectiveTimeType):  # String
+		self.add_query_param('EffectiveTimeType', EffectiveTimeType)
 	def get_Name(self): # String
 		return self.get_body_params().get('Name')
 
@@ -41,8 +56,13 @@ class CreateOrUpdateSilencePolicyRequest(RpcRequest):
 
 	def set_Id(self, Id):  # Long
 		self.add_body_params('Id', Id)
-	def get_MatchingRules(self): # String
-		return self.get_body_params().get('MatchingRules')
+	def get_State(self): # String
+		return self.get_body_params().get('State')
 
-	def set_MatchingRules(self, MatchingRules):  # String
-		self.add_body_params('MatchingRules', MatchingRules)
+	def set_State(self, State):  # String
+		self.add_body_params('State', State)
+	def get_TimePeriod(self): # String
+		return self.get_query_params().get('TimePeriod')
+
+	def set_TimePeriod(self, TimePeriod):  # String
+		self.add_query_param('TimePeriod', TimePeriod)

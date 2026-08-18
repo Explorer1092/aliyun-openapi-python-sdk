@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class AddQueueRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddQueue')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'AddQueue','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,3 +51,8 @@ class AddQueueRequest(RpcRequest):
 
 	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
 		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
+	def get_UseESS(self): # Boolean
+		return self.get_query_params().get('UseESS')
+
+	def set_UseESS(self, UseESS):  # Boolean
+		self.add_query_param('UseESS', UseESS)

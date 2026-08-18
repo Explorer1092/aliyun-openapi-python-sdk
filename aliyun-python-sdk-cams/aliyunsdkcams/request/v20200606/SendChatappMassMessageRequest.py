@@ -24,7 +24,7 @@ import json
 class SendChatappMassMessageRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'SendChatappMassMessage')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'SendChatappMassMessage','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,11 +62,21 @@ class SendChatappMassMessageRequest(RpcRequest):
 
 	def set_From(self, _From):  # String
 		self.add_body_params('From', _From)
+	def get_TemplateName(self): # String
+		return self.get_body_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_body_params('TemplateName', TemplateName)
 	def get_Tag(self): # String
 		return self.get_body_params().get('Tag')
 
 	def set_Tag(self, Tag):  # String
 		self.add_body_params('Tag', Tag)
+	def get_FallBackRule(self): # String
+		return self.get_body_params().get('FallBackRule')
+
+	def set_FallBackRule(self, FallBackRule):  # String
+		self.add_body_params('FallBackRule', FallBackRule)
 	def get_TaskId(self): # String
 		return self.get_body_params().get('TaskId')
 

@@ -23,7 +23,7 @@ from aliyunsdkcbn.endpoint import endpoint_data
 class DescribeChildInstanceRegionsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeChildInstanceRegions')
+		RpcRequest.__init__(self, 'Cbn', '2017-09-12', 'DescribeChildInstanceRegions','cbn')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,3 +56,8 @@ class DescribeChildInstanceRegionsRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

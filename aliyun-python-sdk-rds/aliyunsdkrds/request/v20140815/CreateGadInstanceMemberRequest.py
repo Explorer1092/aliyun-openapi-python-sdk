@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateGadInstanceMemberRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateGadInstanceMember')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateGadInstanceMember','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -31,21 +31,6 @@ class CreateGadInstanceMemberRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_DBList(self): # String
-		return self.get_query_params().get('DBList')
-
-	def set_DBList(self, DBList):  # String
-		self.add_query_param('DBList', DBList)
-	def get_CentralDBInstanceId(self): # String
-		return self.get_query_params().get('CentralDBInstanceId')
-
-	def set_CentralDBInstanceId(self, CentralDBInstanceId):  # String
-		self.add_query_param('CentralDBInstanceId', CentralDBInstanceId)
-	def get_CentralRdsDtsAdminPassword(self): # String
-		return self.get_query_params().get('CentralRdsDtsAdminPassword')
-
-	def set_CentralRdsDtsAdminPassword(self, CentralRdsDtsAdminPassword):  # String
-		self.add_query_param('CentralRdsDtsAdminPassword', CentralRdsDtsAdminPassword)
 	def get_CentralRdsDtsAdminAccount(self): # String
 		return self.get_query_params().get('CentralRdsDtsAdminAccount')
 
@@ -76,14 +61,14 @@ class CreateGadInstanceMemberRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.EngineVersion', UnitNode[depth1].get('EngineVersion'))
 			if UnitNode[depth1].get('DbInstanceClass') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DbInstanceClass', UnitNode[depth1].get('DbInstanceClass'))
-			if UnitNode[depth1].get('VSwitchID') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.VSwitchID', UnitNode[depth1].get('VSwitchID'))
 			if UnitNode[depth1].get('SecurityIPList') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.SecurityIPList', UnitNode[depth1].get('SecurityIPList'))
-			if UnitNode[depth1].get('RegionID') is not None:
-				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
+			if UnitNode[depth1].get('VSwitchID') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.VSwitchID', UnitNode[depth1].get('VSwitchID'))
 			if UnitNode[depth1].get('Engine') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.Engine', UnitNode[depth1].get('Engine'))
+			if UnitNode[depth1].get('RegionID') is not None:
+				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.RegionID', UnitNode[depth1].get('RegionID'))
 			if UnitNode[depth1].get('DtsInstanceClass') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsInstanceClass', UnitNode[depth1].get('DtsInstanceClass'))
 			if UnitNode[depth1].get('VpcID') is not None:
@@ -96,3 +81,18 @@ class CreateGadInstanceMemberRequest(RpcRequest):
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DBInstanceStorageType', UnitNode[depth1].get('DBInstanceStorageType'))
 			if UnitNode[depth1].get('DtsConflict') is not None:
 				self.add_query_param('UnitNode.' + str(depth1 + 1) + '.DtsConflict', UnitNode[depth1].get('DtsConflict'))
+	def get_DBList(self): # String
+		return self.get_query_params().get('DBList')
+
+	def set_DBList(self, DBList):  # String
+		self.add_query_param('DBList', DBList)
+	def get_CentralDBInstanceId(self): # String
+		return self.get_query_params().get('CentralDBInstanceId')
+
+	def set_CentralDBInstanceId(self, CentralDBInstanceId):  # String
+		self.add_query_param('CentralDBInstanceId', CentralDBInstanceId)
+	def get_CentralRdsDtsAdminPassword(self): # String
+		return self.get_query_params().get('CentralRdsDtsAdminPassword')
+
+	def set_CentralRdsDtsAdminPassword(self, CentralRdsDtsAdminPassword):  # String
+		self.add_query_param('CentralRdsDtsAdminPassword', CentralRdsDtsAdminPassword)

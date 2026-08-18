@@ -24,7 +24,7 @@ import json
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateDBInstance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -62,6 +62,16 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ConnectionString(self, ConnectionString):  # String
 		self.add_query_param('ConnectionString', ConnectionString)
+	def get_AutoCreateProxy(self): # Boolean
+		return self.get_query_params().get('AutoCreateProxy')
+
+	def set_AutoCreateProxy(self, AutoCreateProxy):  # Boolean
+		self.add_query_param('AutoCreateProxy', AutoCreateProxy)
+	def get_OptimizedWrites(self): # String
+		return self.get_query_params().get('OptimizedWrites')
+
+	def set_OptimizedWrites(self, OptimizedWrites):  # String
+		self.add_query_param('OptimizedWrites', OptimizedWrites)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -96,11 +106,21 @@ class CreateDBInstanceRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_BusinessInfo(self): # String
 		return self.get_query_params().get('BusinessInfo')
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_WhitelistTemplateList(self): # String
+		return self.get_query_params().get('WhitelistTemplateList')
+
+	def set_WhitelistTemplateList(self, WhitelistTemplateList):  # String
+		self.add_query_param('WhitelistTemplateList', WhitelistTemplateList)
 	def get_Period(self): # String
 		return self.get_query_params().get('Period')
 
@@ -156,6 +176,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_RoleARN(self, RoleARN):  # String
 		self.add_query_param('RoleARN', RoleARN)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -186,6 +211,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_TargetDedicatedHostIdForSlave(self, TargetDedicatedHostIdForSlave):  # String
 		self.add_query_param('TargetDedicatedHostIdForSlave', TargetDedicatedHostIdForSlave)
+	def get_ExternalReplication(self): # Boolean
+		return self.get_query_params().get('ExternalReplication')
+
+	def set_ExternalReplication(self, ExternalReplication):  # Boolean
+		self.add_query_param('ExternalReplication', ExternalReplication)
 	def get_ZoneIdSlave1(self): # String
 		return self.get_query_params().get('ZoneIdSlave1')
 
@@ -196,11 +226,26 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ZoneIdSlave2(self, ZoneIdSlave2):  # String
 		self.add_query_param('ZoneIdSlave2', ZoneIdSlave2)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_DBIsIgnoreCase(self): # String
 		return self.get_query_params().get('DBIsIgnoreCase')
 
 	def set_DBIsIgnoreCase(self, DBIsIgnoreCase):  # String
 		self.add_query_param('DBIsIgnoreCase', DBIsIgnoreCase)
+	def get_IoAccelerationEnabled(self): # String
+		return self.get_query_params().get('IoAccelerationEnabled')
+
+	def set_IoAccelerationEnabled(self, IoAccelerationEnabled):  # String
+		self.add_query_param('IoAccelerationEnabled', IoAccelerationEnabled)
+	def get_ColdDataEnabled(self): # Boolean
+		return self.get_query_params().get('ColdDataEnabled')
+
+	def set_ColdDataEnabled(self, ColdDataEnabled):  # Boolean
+		self.add_query_param('ColdDataEnabled', ColdDataEnabled)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

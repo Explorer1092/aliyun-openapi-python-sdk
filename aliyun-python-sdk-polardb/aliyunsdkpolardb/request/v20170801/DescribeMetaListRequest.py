@@ -36,6 +36,11 @@ class DescribeMetaListRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_RegionCode(self): # String
+		return self.get_query_params().get('RegionCode')
+
+	def set_RegionCode(self, RegionCode):  # String
+		self.add_query_param('RegionCode', RegionCode)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 

@@ -66,11 +66,21 @@ class CreateSslVpnServerRequest(RpcRequest):
 
 	def set_Cipher(self, Cipher):  # String
 		self.add_query_param('Cipher', Cipher)
+	def get_IDaaSApplicationId(self): # String
+		return self.get_query_params().get('IDaaSApplicationId')
+
+	def set_IDaaSApplicationId(self, IDaaSApplicationId):  # String
+		self.add_query_param('IDaaSApplicationId', IDaaSApplicationId)
 	def get_ClientIpPool(self): # String
 		return self.get_query_params().get('ClientIpPool')
 
 	def set_ClientIpPool(self, ClientIpPool):  # String
 		self.add_query_param('ClientIpPool', ClientIpPool)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

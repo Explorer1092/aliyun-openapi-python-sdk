@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class CreateAppGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateAppGroup')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'CreateAppGroup','schedulerx2')
 		self.set_protocol_type('https')
 		self.set_method('GET')
 
@@ -52,6 +52,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_NotificationPolicyName(self): # String
+		return self.get_query_params().get('NotificationPolicyName')
+
+	def set_NotificationPolicyName(self, NotificationPolicyName):  # String
+		self.add_query_param('NotificationPolicyName', NotificationPolicyName)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 
@@ -77,6 +82,11 @@ class CreateAppGroupRequest(RpcRequest):
 
 	def set_AppType(self, AppType):  # Integer
 		self.add_query_param('AppType', AppType)
+	def get_AppVersion(self): # Integer
+		return self.get_query_params().get('AppVersion')
+
+	def set_AppVersion(self, AppVersion):  # Integer
+		self.add_query_param('AppVersion', AppVersion)
 	def get_MonitorConfigJson(self): # String
 		return self.get_query_params().get('MonitorConfigJson')
 

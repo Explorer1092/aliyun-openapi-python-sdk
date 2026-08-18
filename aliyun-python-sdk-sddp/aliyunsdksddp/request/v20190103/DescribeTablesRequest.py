@@ -71,6 +71,11 @@ class DescribeTablesRequest(RpcRequest):
 
 	def set_CurrentPage(self, CurrentPage):  # Integer
 		self.add_query_param('CurrentPage', CurrentPage)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
 	def get_InstanceId(self): # Long
 		return self.get_query_params().get('InstanceId')
 

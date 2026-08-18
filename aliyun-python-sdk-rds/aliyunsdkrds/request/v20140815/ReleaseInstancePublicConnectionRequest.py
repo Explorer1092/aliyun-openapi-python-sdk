@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ReleaseInstancePublicConnectionRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ReleaseInstancePublicConnection')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ReleaseInstancePublicConnection','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class ReleaseInstancePublicConnectionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DBInstanceId(self): # String
+		return self.get_query_params().get('DBInstanceId')
+
+	def set_DBInstanceId(self, DBInstanceId):  # String
+		self.add_query_param('DBInstanceId', DBInstanceId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,8 +61,3 @@ class ReleaseInstancePublicConnectionRequest(RpcRequest):
 
 	def set_CurrentConnectionString(self, CurrentConnectionString):  # String
 		self.add_query_param('CurrentConnectionString', CurrentConnectionString)
-	def get_DBInstanceId(self): # String
-		return self.get_query_params().get('DBInstanceId')
-
-	def set_DBInstanceId(self, DBInstanceId):  # String
-		self.add_query_param('DBInstanceId', DBInstanceId)

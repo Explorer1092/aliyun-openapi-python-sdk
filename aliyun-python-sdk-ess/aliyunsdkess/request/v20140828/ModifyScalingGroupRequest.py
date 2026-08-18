@@ -67,11 +67,22 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_CustomPolicyARN(self, CustomPolicyARN):  # String
 		self.add_query_param('CustomPolicyARN', CustomPolicyARN)
+	def get_StopInstanceTimeout(self): # Integer
+		return self.get_query_params().get('StopInstanceTimeout')
+
+	def set_StopInstanceTimeout(self, StopInstanceTimeout):  # Integer
+		self.add_query_param('StopInstanceTimeout', StopInstanceTimeout)
 	def get_DefaultCooldown(self): # Integer
 		return self.get_query_params().get('DefaultCooldown')
 
 	def set_DefaultCooldown(self, DefaultCooldown):  # Integer
 		self.add_query_param('DefaultCooldown', DefaultCooldown)
+	def get_HealthCheckTypess(self): # RepeatList
+		return self.get_query_params().get('HealthCheckTypes')
+
+	def set_HealthCheckTypess(self, HealthCheckTypes):  # RepeatList
+		for depth1 in range(len(HealthCheckTypes)):
+			self.add_query_param('HealthCheckTypes.' + str(depth1 + 1), HealthCheckTypes[depth1])
 	def get_MultiAZPolicy(self): # String
 		return self.get_query_params().get('MultiAZPolicy')
 
@@ -103,6 +114,20 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_CompensateWithOnDemand(self, CompensateWithOnDemand):  # Boolean
 		self.add_query_param('CompensateWithOnDemand', CompensateWithOnDemand)
+	def get_CapacityOptions(self): # Struct
+		return self.get_query_params().get('CapacityOptions')
+
+	def set_CapacityOptions(self, CapacityOptions):  # Struct
+		if CapacityOptions.get('CompensateWithOnDemand') is not None:
+			self.add_query_param('CapacityOptions.CompensateWithOnDemand', CapacityOptions.get('CompensateWithOnDemand'))
+		if CapacityOptions.get('PriceComparisonMode') is not None:
+			self.add_query_param('CapacityOptions.PriceComparisonMode', CapacityOptions.get('PriceComparisonMode'))
+		if CapacityOptions.get('OnDemandBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandBaseCapacity', CapacityOptions.get('OnDemandBaseCapacity'))
+		if CapacityOptions.get('SpotAutoReplaceOnDemand') is not None:
+			self.add_query_param('CapacityOptions.SpotAutoReplaceOnDemand', CapacityOptions.get('SpotAutoReplaceOnDemand'))
+		if CapacityOptions.get('OnDemandPercentageAboveBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandPercentageAboveBaseCapacity', CapacityOptions.get('OnDemandPercentageAboveBaseCapacity'))
 	def get_MinSize(self): # Integer
 		return self.get_query_params().get('MinSize')
 
@@ -138,6 +163,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_SpotAllocationStrategy(self, SpotAllocationStrategy):  # String
 		self.add_query_param('SpotAllocationStrategy', SpotAllocationStrategy)
+	def get_DisableDesiredCapacity(self): # Boolean
+		return self.get_query_params().get('DisableDesiredCapacity')
+
+	def set_DisableDesiredCapacity(self, DisableDesiredCapacity):  # Boolean
+		self.add_query_param('DisableDesiredCapacity', DisableDesiredCapacity)
 	def get_RemovalPolicy1(self): # String
 		return self.get_query_params().get('RemovalPolicy.1')
 
@@ -188,6 +218,11 @@ class ModifyScalingGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateVersion(self, LaunchTemplateVersion):  # String
 		self.add_query_param('LaunchTemplateVersion', LaunchTemplateVersion)
+	def get_ScalingPolicy(self): # String
+		return self.get_query_params().get('ScalingPolicy')
+
+	def set_ScalingPolicy(self, ScalingPolicy):  # String
+		self.add_query_param('ScalingPolicy', ScalingPolicy)
 	def get_AllocationStrategy(self): # String
 		return self.get_query_params().get('AllocationStrategy')
 

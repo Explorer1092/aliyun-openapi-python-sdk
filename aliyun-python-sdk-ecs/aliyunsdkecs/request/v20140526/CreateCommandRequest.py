@@ -36,6 +36,11 @@ class CreateCommandRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_WorkingDir(self): # String
 		return self.get_query_params().get('WorkingDir')
 
@@ -61,6 +66,11 @@ class CreateCommandRequest(RpcRequest):
 
 	def set_Timeout(self, Timeout):  # Long
 		self.add_query_param('Timeout', Timeout)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_ContentEncoding(self): # String
 		return self.get_query_params().get('ContentEncoding')
 
@@ -100,3 +110,8 @@ class CreateCommandRequest(RpcRequest):
 
 	def set_EnableParameter(self, EnableParameter):  # Boolean
 		self.add_query_param('EnableParameter', EnableParameter)
+	def get_Launcher(self): # String
+		return self.get_query_params().get('Launcher')
+
+	def set_Launcher(self, Launcher):  # String
+		self.add_query_param('Launcher', Launcher)

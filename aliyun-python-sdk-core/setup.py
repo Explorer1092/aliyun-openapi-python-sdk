@@ -19,9 +19,8 @@
 '''
 
 import os
-import sys
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 """
 Setup module for core.
@@ -44,8 +43,8 @@ with open("README.rst") as fp:
     LONG_DESCRIPTION = fp.read()
 
 requires = [
-    "jmespath>=0.9.3,<1.0.0",
-    "cryptography>=2.6.0"
+    "jmespath>=0.9.3,<2.0.0",
+    "cryptography>=3.0.0",
 ]
 
 setup_args = {
@@ -67,15 +66,16 @@ setup_args = {
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Software Development',
-    )
+    ),
+    'python_requires': '>=3.7'
 }
 
 setup(name='aliyun-python-sdk-core', **setup_args)

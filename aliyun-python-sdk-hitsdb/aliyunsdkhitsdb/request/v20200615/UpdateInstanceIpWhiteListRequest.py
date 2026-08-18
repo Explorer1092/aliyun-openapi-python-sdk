@@ -36,6 +36,11 @@ class UpdateInstanceIpWhiteListRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Delete(self): # Boolean
+		return self.get_query_params().get('Delete')
+
+	def set_Delete(self, Delete):  # Boolean
+		self.add_query_param('Delete', Delete)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 

@@ -46,6 +46,16 @@ class ModifyDBNodeClassRequest(RpcRequest):
 
 	def set_PlannedEndTime(self, PlannedEndTime):  # String
 		self.add_query_param('PlannedEndTime', PlannedEndTime)
+	def get_CloudProvider(self): # String
+		return self.get_query_params().get('CloudProvider')
+
+	def set_CloudProvider(self, CloudProvider):  # String
+		self.add_query_param('CloudProvider', CloudProvider)
+	def get_DBNodeType(self): # String
+		return self.get_query_params().get('DBNodeType')
+
+	def set_DBNodeType(self, DBNodeType):  # String
+		self.add_query_param('DBNodeType', DBNodeType)
 	def get_DBNodeTargetClass(self): # String
 		return self.get_query_params().get('DBNodeTargetClass')
 
@@ -66,6 +76,11 @@ class ModifyDBNodeClassRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_PlannedFlashingOffTime(self): # String
+		return self.get_query_params().get('PlannedFlashingOffTime')
+
+	def set_PlannedFlashingOffTime(self, PlannedFlashingOffTime):  # String
+		self.add_query_param('PlannedFlashingOffTime', PlannedFlashingOffTime)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

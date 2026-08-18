@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+import json
 
 class DescribeInstancesRequest(RpcRequest):
 
@@ -25,6 +26,11 @@ class DescribeInstancesRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Ens', '2017-11-10', 'DescribeInstances','ens')
 		self.set_method('POST')
 
+	def get_ServiceStatus(self): # Array
+		return self.get_query_params().get('ServiceStatus')
+
+	def set_ServiceStatus(self, ServiceStatus):  # Array
+		self.add_query_param("ServiceStatus", json.dumps(ServiceStatus))
 	def get_OrderByParams(self): # String
 		return self.get_query_params().get('OrderByParams')
 
@@ -45,6 +51,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_EnsServiceId(self, EnsServiceId):  # String
 		self.add_query_param('EnsServiceId', EnsServiceId)
+	def get_Tags(self): # Array
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # Array
+		self.add_query_param("Tags", json.dumps(Tags))
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -105,6 +116,11 @@ class DescribeInstancesRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # String
 		self.add_query_param('PageSize', PageSize)
+	def get_InstanceType(self): # String
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceType(self, InstanceType):  # String
+		self.add_query_param('InstanceType', InstanceType)
 	def get_EnsRegionIds(self): # String
 		return self.get_query_params().get('EnsRegionIds')
 

@@ -41,6 +41,21 @@ class DescribeManagedInstancesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_MachineId(self): # String
+		return self.get_query_params().get('MachineId')
+
+	def set_MachineId(self, MachineId):  # String
+		self.add_query_param('MachineId', MachineId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_PageSize(self): # Long
 		return self.get_query_params().get('PageSize')
 
@@ -75,6 +90,11 @@ class DescribeManagedInstancesRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_Connected(self): # String
+		return self.get_query_params().get('Connected')
+
+	def set_Connected(self, Connected):  # String
+		self.add_query_param('Connected', Connected)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
@@ -86,6 +106,11 @@ class DescribeManagedInstancesRequest(RpcRequest):
 	def set_InstanceIds(self, InstanceId):  # RepeatList
 		for depth1 in range(len(InstanceId)):
 			self.add_query_param('InstanceId.' + str(depth1 + 1), InstanceId[depth1])
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_InstanceIp(self): # String
 		return self.get_query_params().get('InstanceIp')
 

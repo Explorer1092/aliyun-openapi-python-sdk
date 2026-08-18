@@ -51,6 +51,11 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_Password(self, Password):  # String
 		self.add_query_param('Password', Password)
+	def get_SourceIp(self): # String
+		return self.get_query_params().get('SourceIp')
+
+	def set_SourceIp(self, SourceIp):  # String
+		self.add_query_param('SourceIp', SourceIp)
 	def get_Enable(self): # Integer
 		return self.get_query_params().get('Enable')
 
@@ -81,11 +86,21 @@ class CreateDataLimitRequest(RpcRequest):
 
 	def set_AutoScan(self, AutoScan):  # Integer
 		self.add_query_param('AutoScan', AutoScan)
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
 	def get_LogStoreDay(self): # Integer
 		return self.get_query_params().get('LogStoreDay')
 
 	def set_LogStoreDay(self, LogStoreDay):  # Integer
 		self.add_query_param('LogStoreDay', LogStoreDay)
+	def get_CertificatePermission(self): # String
+		return self.get_query_params().get('CertificatePermission')
+
+	def set_CertificatePermission(self, CertificatePermission):  # String
+		self.add_query_param('CertificatePermission', CertificatePermission)
 	def get_ResourceType(self): # Integer
 		return self.get_query_params().get('ResourceType')
 

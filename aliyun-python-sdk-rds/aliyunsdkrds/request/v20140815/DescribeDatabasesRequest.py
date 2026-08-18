@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeDatabasesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDatabases')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDatabases','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,11 +41,6 @@ class DescribeDatabasesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_ResourceGroupId(self): # String
-		return self.get_query_params().get('ResourceGroupId')
-
-	def set_ResourceGroupId(self, ResourceGroupId):  # String
-		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_DBStatus(self): # String
 		return self.get_query_params().get('DBStatus')
 

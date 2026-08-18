@@ -23,13 +23,19 @@ from aliyunsdkiot.endpoint import endpoint_data
 class InvokeThingsServiceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'InvokeThingsService')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'InvokeThingsService','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+
+	def get_Qos(self):
+		return self.get_query_params().get('Qos')
+
+	def set_Qos(self,Qos):
+		self.add_query_param('Qos',Qos)
 
 	def get_IotInstanceId(self):
 		return self.get_query_params().get('IotInstanceId')

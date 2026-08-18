@@ -25,3 +25,8 @@ class ListRegionsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'SWAS-OPEN', '2020-06-01', 'ListRegions','SWAS-OPEN')
 		self.set_method('POST')
 
+	def get_AcceptLanguage(self): # String
+		return self.get_query_params().get('AcceptLanguage')
+
+	def set_AcceptLanguage(self, AcceptLanguage):  # String
+		self.add_query_param('AcceptLanguage', AcceptLanguage)

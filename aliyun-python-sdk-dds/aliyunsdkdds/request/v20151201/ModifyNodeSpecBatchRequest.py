@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'ModifyNodeSpecBatch','dds')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -40,16 +46,21 @@ class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def set_NodesInfo(self, NodesInfo):  # String
 		self.add_query_param('NodesInfo', NodesInfo)
+	def get_TargetSecondaryZoneId(self): # String
+		return self.get_query_params().get('TargetSecondaryZoneId')
+
+	def set_TargetSecondaryZoneId(self, TargetSecondaryZoneId):  # String
+		self.add_query_param('TargetSecondaryZoneId', TargetSecondaryZoneId)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
 	def set_CouponNo(self, CouponNo):  # String
 		self.add_query_param('CouponNo', CouponNo)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def get_TargetZoneId(self): # String
+		return self.get_query_params().get('TargetZoneId')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
+	def set_TargetZoneId(self, TargetZoneId):  # String
+		self.add_query_param('TargetZoneId', TargetZoneId)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
@@ -80,11 +91,21 @@ class ModifyNodeSpecBatchRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TargetVswitchId(self): # String
+		return self.get_query_params().get('TargetVswitchId')
+
+	def set_TargetVswitchId(self, TargetVswitchId):  # String
+		self.add_query_param('TargetVswitchId', TargetVswitchId)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_TargetHiddenZoneId(self): # String
+		return self.get_query_params().get('TargetHiddenZoneId')
+
+	def set_TargetHiddenZoneId(self, TargetHiddenZoneId):  # String
+		self.add_query_param('TargetHiddenZoneId', TargetHiddenZoneId)
 	def get_OrderType(self): # String
 		return self.get_query_params().get('OrderType')
 

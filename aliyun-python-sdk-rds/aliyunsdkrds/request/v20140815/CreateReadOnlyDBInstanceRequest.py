@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateReadOnlyDBInstance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateReadOnlyDBInstance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_DBInstanceStorage(self, DBInstanceStorage):  # Integer
 		self.add_query_param('DBInstanceStorage', DBInstanceStorage)
+	def get_AutoCreateProxy(self): # Boolean
+		return self.get_query_params().get('AutoCreateProxy')
+
+	def set_AutoCreateProxy(self, AutoCreateProxy):  # Boolean
+		self.add_query_param('AutoCreateProxy', AutoCreateProxy)
 	def get_EngineVersion(self): # String
 		return self.get_query_params().get('EngineVersion')
 
@@ -71,6 +76,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_GdnInstanceName(self, GdnInstanceName):  # String
 		self.add_query_param('GdnInstanceName', GdnInstanceName)
+	def get_CustomExtraInfo(self): # String
+		return self.get_query_params().get('CustomExtraInfo')
+
+	def set_CustomExtraInfo(self, CustomExtraInfo):  # String
+		self.add_query_param('CustomExtraInfo', CustomExtraInfo)
 	def get_TddlBizType(self): # String
 		return self.get_query_params().get('TddlBizType')
 
@@ -106,6 +116,16 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_Port(self): # String
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # String
+		self.add_query_param('Port', Port)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
 	def get_ZoneId(self): # String
 		return self.get_query_params().get('ZoneId')
 
@@ -126,6 +146,16 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_InstructionSetArch(self, InstructionSetArch):  # String
 		self.add_query_param('InstructionSetArch', InstructionSetArch)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
+	def get_IoAccelerationEnabled(self): # String
+		return self.get_query_params().get('IoAccelerationEnabled')
+
+	def set_IoAccelerationEnabled(self, IoAccelerationEnabled):  # String
+		self.add_query_param('IoAccelerationEnabled', IoAccelerationEnabled)
 	def get_TddlRegionConfig(self): # String
 		return self.get_query_params().get('TddlRegionConfig')
 
@@ -176,6 +206,11 @@ class CreateReadOnlyDBInstanceRequest(RpcRequest):
 
 	def set_VPCId(self, VPCId):  # String
 		self.add_query_param('VPCId', VPCId)
+	def get_IsAnalyticReadOnlyIns(self): # Boolean
+		return self.get_query_params().get('IsAnalyticReadOnlyIns')
+
+	def set_IsAnalyticReadOnlyIns(self, IsAnalyticReadOnlyIns):  # Boolean
+		self.add_query_param('IsAnalyticReadOnlyIns', IsAnalyticReadOnlyIns)
 	def get_Category(self): # String
 		return self.get_query_params().get('Category')
 

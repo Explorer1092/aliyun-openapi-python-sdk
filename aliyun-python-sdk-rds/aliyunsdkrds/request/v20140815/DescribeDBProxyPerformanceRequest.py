@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeDBProxyPerformanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBProxyPerformance')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBProxyPerformance','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -51,6 +51,11 @@ class DescribeDBProxyPerformanceRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_Dimension(self): # String
+		return self.get_query_params().get('Dimension')
+
+	def set_Dimension(self, Dimension):  # String
+		self.add_query_param('Dimension', Dimension)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

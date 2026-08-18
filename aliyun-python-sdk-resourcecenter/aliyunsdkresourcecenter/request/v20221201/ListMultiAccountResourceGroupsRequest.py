@@ -30,17 +30,17 @@ class ListMultiAccountResourceGroupsRequest(RpcRequest):
 
 	def set_AccountId(self, AccountId):  # String
 		self.add_query_param('AccountId', AccountId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ResourceGroupIdss(self): # RepeatList
 		return self.get_query_params().get('ResourceGroupIds')
 
 	def set_ResourceGroupIdss(self, ResourceGroupIds):  # RepeatList
 		for depth1 in range(len(ResourceGroupIds)):
 			self.add_query_param('ResourceGroupIds.' + str(depth1 + 1), ResourceGroupIds[depth1])
-	def get_NextToken(self): # String
-		return self.get_query_params().get('NextToken')
-
-	def set_NextToken(self, NextToken):  # String
-		self.add_query_param('NextToken', NextToken)
 	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 

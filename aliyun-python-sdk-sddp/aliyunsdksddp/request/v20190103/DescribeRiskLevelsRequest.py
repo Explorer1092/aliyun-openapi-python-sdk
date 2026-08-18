@@ -31,6 +31,16 @@ class DescribeRiskLevelsRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_FeatureType(self): # Integer
+		return self.get_query_params().get('FeatureType')
+
+	def set_FeatureType(self, FeatureType):  # Integer
+		self.add_query_param('FeatureType', FeatureType)
+	def get_TemplateId(self): # Long
+		return self.get_query_params().get('TemplateId')
+
+	def set_TemplateId(self, TemplateId):  # Long
+		self.add_query_param('TemplateId', TemplateId)
 	def get_Lang(self): # String
 		return self.get_query_params().get('Lang')
 

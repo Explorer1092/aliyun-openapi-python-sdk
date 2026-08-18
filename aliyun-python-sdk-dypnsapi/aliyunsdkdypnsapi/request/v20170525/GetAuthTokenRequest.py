@@ -23,40 +23,66 @@ from aliyunsdkdypnsapi.endpoint import endpoint_data
 class GetAuthTokenRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken')
+		RpcRequest.__init__(self, 'Dypnsapi', '2017-05-25', 'GetAuthToken','dypnsapi')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_ResourceOwnerId(self):
+	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
-	def set_ResourceOwnerId(self,ResourceOwnerId):
-		self.add_query_param('ResourceOwnerId',ResourceOwnerId)
-
-	def get_ResourceOwnerAccount(self):
-		return self.get_query_params().get('ResourceOwnerAccount')
-
-	def set_ResourceOwnerAccount(self,ResourceOwnerAccount):
-		self.add_query_param('ResourceOwnerAccount',ResourceOwnerAccount)
-
-	def get_Origin(self):
+	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
+		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Origin(self): # String
 		return self.get_query_params().get('Origin')
 
-	def set_Origin(self,Origin):
-		self.add_query_param('Origin',Origin)
+	def set_Origin(self, Origin):  # String
+		self.add_query_param('Origin', Origin)
+	def get_SceneCode(self): # String
+		return self.get_query_params().get('SceneCode')
 
-	def get_OwnerId(self):
+	def set_SceneCode(self, SceneCode):  # String
+		self.add_query_param('SceneCode', SceneCode)
+	def get_CuApiCode(self): # Integer
+		return self.get_query_params().get('CuApiCode')
+
+	def set_CuApiCode(self, CuApiCode):  # Integer
+		self.add_query_param('CuApiCode', CuApiCode)
+	def get_ResourceOwnerAccount(self): # String
+		return self.get_query_params().get('ResourceOwnerAccount')
+
+	def set_ResourceOwnerAccount(self, ResourceOwnerAccount):  # String
+		self.add_query_param('ResourceOwnerAccount', ResourceOwnerAccount)
+	def get_CtApiCode(self): # Integer
+		return self.get_query_params().get('CtApiCode')
+
+	def set_CtApiCode(self, CtApiCode):  # Integer
+		self.add_query_param('CtApiCode', CtApiCode)
+	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
-	def set_OwnerId(self,OwnerId):
-		self.add_query_param('OwnerId',OwnerId)
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Version(self): # String
+		return self.get_query_params().get('Version')
 
-	def get_Url(self):
+	def set_Version(self, Version):  # String
+		self.add_query_param('Version', Version)
+	def get_Url(self): # String
 		return self.get_query_params().get('Url')
 
-	def set_Url(self,Url):
-		self.add_query_param('Url',Url)
+	def set_Url(self, Url):  # String
+		self.add_query_param('Url', Url)
+	def get_BizType(self): # Integer
+		return self.get_query_params().get('BizType')
+
+	def set_BizType(self, BizType):  # Integer
+		self.add_query_param('BizType', BizType)
+	def get_CmApiCode(self): # Integer
+		return self.get_query_params().get('CmApiCode')
+
+	def set_CmApiCode(self, CmApiCode):  # Integer
+		self.add_query_param('CmApiCode', CmApiCode)

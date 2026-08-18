@@ -41,6 +41,11 @@ class DescribeMasterSlaveServerGroupsRequest(RpcRequest):
 
 	def set_IncludeListener(self, IncludeListener):  # Boolean
 		self.add_query_param('IncludeListener', IncludeListener)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 

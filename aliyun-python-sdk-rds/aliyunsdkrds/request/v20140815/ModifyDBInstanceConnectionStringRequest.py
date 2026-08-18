@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceConnectionString')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyDBInstanceConnectionString','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -56,6 +56,11 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_RetainVip(self): # Boolean
+		return self.get_query_params().get('RetainVip')
+
+	def set_RetainVip(self, RetainVip):  # Boolean
+		self.add_query_param('RetainVip', RetainVip)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -86,3 +91,8 @@ class ModifyDBInstanceConnectionStringRequest(RpcRequest):
 
 	def set_Port(self, Port):  # String
 		self.add_query_param('Port', Port)
+	def get_TargetDBInstanceId(self): # String
+		return self.get_query_params().get('TargetDBInstanceId')
+
+	def set_TargetDBInstanceId(self, TargetDBInstanceId):  # String
+		self.add_query_param('TargetDBInstanceId', TargetDBInstanceId)

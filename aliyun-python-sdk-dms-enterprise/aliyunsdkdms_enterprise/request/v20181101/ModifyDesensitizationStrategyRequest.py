@@ -41,6 +41,11 @@ class ModifyDesensitizationStrategyRequest(RpcRequest):
 
 	def set_Tid(self, Tid):  # Long
 		self.add_query_param('Tid', Tid)
+	def get_IsDefault(self): # Boolean
+		return self.get_query_params().get('IsDefault')
+
+	def set_IsDefault(self, IsDefault):  # Boolean
+		self.add_query_param('IsDefault', IsDefault)
 	def get_TableName(self): # String
 		return self.get_query_params().get('TableName')
 

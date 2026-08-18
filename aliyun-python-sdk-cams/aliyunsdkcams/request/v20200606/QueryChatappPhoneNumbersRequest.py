@@ -23,7 +23,7 @@ from aliyunsdkcams.endpoint import endpoint_data
 class QueryChatappPhoneNumbersRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryChatappPhoneNumbers')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'QueryChatappPhoneNumbers','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,3 +41,8 @@ class QueryChatappPhoneNumbersRequest(RpcRequest):
 
 	def set_CustSpaceId(self, CustSpaceId):  # String
 		self.add_query_param('CustSpaceId', CustSpaceId)
+	def get_Status(self): # String
+		return self.get_query_params().get('Status')
+
+	def set_Status(self, Status):  # String
+		self.add_query_param('Status', Status)

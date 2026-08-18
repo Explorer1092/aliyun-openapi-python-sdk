@@ -24,7 +24,7 @@ class UpdateDcdnUserRealTimeDeliveryFieldRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'dcdn', '2018-01-15', 'UpdateDcdnUserRealTimeDeliveryField')
-		self.set_method('GET')
+		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())

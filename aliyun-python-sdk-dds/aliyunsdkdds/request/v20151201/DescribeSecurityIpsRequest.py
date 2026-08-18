@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class DescribeSecurityIpsRequest(RpcRequest):
 
@@ -25,16 +26,21 @@ class DescribeSecurityIpsRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeSecurityIps','dds')
 		self.set_method('POST')
 
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
+	def get_ShowHDMIps(self): # Boolean
+		return self.get_query_params().get('ShowHDMIps')
 
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
+	def set_ShowHDMIps(self, ShowHDMIps):  # Boolean
+		self.add_query_param('ShowHDMIps', ShowHDMIps)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

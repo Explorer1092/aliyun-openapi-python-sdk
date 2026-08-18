@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateShardingDBInstance','dds')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -45,6 +51,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_ReplicaSets(self): # RepeatList
 		return self.get_query_params().get('ReplicaSet')
 
@@ -66,11 +77,6 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
@@ -95,6 +101,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_Period(self, Period):  # Integer
 		self.add_query_param('Period', Period)
+	def get_BackupId(self): # String
+		return self.get_query_params().get('BackupId')
+
+	def set_BackupId(self, BackupId):  # String
+		self.add_query_param('BackupId', BackupId)
 	def get_EncryptionKey(self): # String
 		return self.get_query_params().get('EncryptionKey')
 
@@ -131,6 +142,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 		for depth1 in range(len(Mongos)):
 			if Mongos[depth1].get('Class') is not None:
 				self.add_query_param('Mongos.' + str(depth1 + 1) + '.Class', Mongos[depth1].get('Class'))
+	def get_ProvisionedIops(self): # Long
+		return self.get_query_params().get('ProvisionedIops')
+
+	def set_ProvisionedIops(self, ProvisionedIops):  # Long
+		self.add_query_param('ProvisionedIops', ProvisionedIops)
 	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 
@@ -166,6 +182,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_RestoreTime(self, RestoreTime):  # String
 		self.add_query_param('RestoreTime', RestoreTime)
+	def get_DestRegion(self): # String
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -181,6 +202,11 @@ class CreateShardingDBInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RestoreType(self): # String
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
 	def get_AccountPassword(self): # String
 		return self.get_query_params().get('AccountPassword')
 

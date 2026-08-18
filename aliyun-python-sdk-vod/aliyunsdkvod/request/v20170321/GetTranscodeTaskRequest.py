@@ -36,3 +36,8 @@ class GetTranscodeTaskRequest(RpcRequest):
 
 	def set_TranscodeTaskId(self, TranscodeTaskId):  # String
 		self.add_query_param('TranscodeTaskId', TranscodeTaskId)
+	def get_JobIds(self): # String
+		return self.get_query_params().get('JobIds')
+
+	def set_JobIds(self, JobIds):  # String
+		self.add_query_param('JobIds', JobIds)

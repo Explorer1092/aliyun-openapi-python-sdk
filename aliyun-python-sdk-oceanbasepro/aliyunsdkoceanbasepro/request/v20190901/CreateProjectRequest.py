@@ -77,6 +77,11 @@ class CreateProjectRequest(RpcRequest):
 
 	def set_WorkerGradeId(self, WorkerGradeId):  # String
 		self.add_body_params('WorkerGradeId', WorkerGradeId)
+	def get_Id(self): # String
+		return self.get_body_params().get('Id')
+
+	def set_Id(self, Id):  # String
+		self.add_body_params('Id', Id)
 	def get_CommonTransferConfig(self): # Struct
 		return self.get_body_params().get('CommonTransferConfig')
 
@@ -87,6 +92,11 @@ class CreateProjectRequest(RpcRequest):
 
 	def set_StructTransferConfig(self, StructTransferConfig):  # Struct
 		self.add_body_params("StructTransferConfig", json.dumps(StructTransferConfig))
+	def get_ReverseIncrTransferConfig(self): # Struct
+		return self.get_body_params().get('ReverseIncrTransferConfig')
+
+	def set_ReverseIncrTransferConfig(self, ReverseIncrTransferConfig):  # Struct
+		self.add_body_params("ReverseIncrTransferConfig", json.dumps(ReverseIncrTransferConfig))
 	def get_EnableIncrTransfer(self): # Boolean
 		return self.get_body_params().get('EnableIncrTransfer')
 

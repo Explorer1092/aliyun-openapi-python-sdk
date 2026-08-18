@@ -31,21 +31,6 @@ class CreateEventSubRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_Role(self): # Integer
-		return self.get_query_params().get('Role')
-
-	def set_Role(self, Role):  # Integer
-		self.add_query_param('Role', Role)
-	def get_ClientToken(self): # String
-		return self.get_query_params().get('ClientToken')
-
-	def set_ClientToken(self, ClientToken):  # String
-		self.add_query_param('ClientToken', ClientToken)
-	def get_NeedCallbackAuthorization(self): # Boolean
-		return self.get_query_params().get('NeedCallbackAuthorization')
-
-	def set_NeedCallbackAuthorization(self, NeedCallbackAuthorization):  # Boolean
-		self.add_query_param('NeedCallbackAuthorization', NeedCallbackAuthorization)
 	def get_Userss(self): # RepeatList
 		return self.get_query_params().get('Users')
 

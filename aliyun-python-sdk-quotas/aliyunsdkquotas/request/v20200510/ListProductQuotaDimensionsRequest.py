@@ -41,13 +41,13 @@ class ListProductQuotaDimensionsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_body_params('NextToken', NextToken)
-	def get_MaxResults(self): # Integer
-		return self.get_body_params().get('MaxResults')
-
-	def set_MaxResults(self, MaxResults):  # Integer
-		self.add_body_params('MaxResults', MaxResults)
 	def get_QuotaCategory(self): # String
 		return self.get_body_params().get('QuotaCategory')
 
 	def set_QuotaCategory(self, QuotaCategory):  # String
 		self.add_body_params('QuotaCategory', QuotaCategory)
+	def get_MaxResults(self): # Integer
+		return self.get_body_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_body_params('MaxResults', MaxResults)

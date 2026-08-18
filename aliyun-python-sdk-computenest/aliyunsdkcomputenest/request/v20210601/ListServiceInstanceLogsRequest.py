@@ -41,8 +41,18 @@ class ListServiceInstanceLogsRequest(RpcRequest):
 
 	def set_ServiceInstanceId(self, ServiceInstanceId):  # String
 		self.add_query_param('ServiceInstanceId', ServiceInstanceId)
-	def get_MaxResults(self): # String
+	def get_LogSource(self): # String
+		return self.get_query_params().get('LogSource')
+
+	def set_LogSource(self, LogSource):  # String
+		self.add_query_param('LogSource', LogSource)
+	def get_MaxResults(self): # Integer
 		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResults(self, MaxResults):  # String
+	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_Logstore(self): # String
+		return self.get_query_params().get('Logstore')
+
+	def set_Logstore(self, Logstore):  # String
+		self.add_query_param('Logstore', Logstore)

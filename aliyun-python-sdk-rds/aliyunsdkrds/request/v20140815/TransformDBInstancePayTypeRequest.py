@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class TransformDBInstancePayTypeRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'TransformDBInstancePayType')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'TransformDBInstancePayType','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class TransformDBInstancePayTypeRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
@@ -81,6 +86,11 @@ class TransformDBInstancePayTypeRequest(RpcRequest):
 
 	def set_AutoRenew(self, AutoRenew):  # String
 		self.add_query_param('AutoRenew', AutoRenew)
+	def get_PromotionCode(self): # String
+		return self.get_query_params().get('PromotionCode')
+
+	def set_PromotionCode(self, PromotionCode):  # String
+		self.add_query_param('PromotionCode', PromotionCode)
 	def get_PayType(self): # String
 		return self.get_query_params().get('PayType')
 

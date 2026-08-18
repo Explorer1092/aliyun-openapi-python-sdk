@@ -53,6 +53,11 @@ class ImportImageRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -68,6 +73,14 @@ class ImportImageRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Features(self): # Struct
+		return self.get_query_params().get('Features')
+
+	def set_Features(self, Features):  # Struct
+		if Features.get('NvmeSupport') is not None:
+			self.add_query_param('Features.NvmeSupport', Features.get('NvmeSupport'))
+		if Features.get('ImdsSupport') is not None:
+			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
 	def get_BootMode(self): # String
 		return self.get_query_params().get('BootMode')
 
@@ -78,6 +91,11 @@ class ImportImageRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_StorageLocationArn(self): # String
+		return self.get_query_params().get('StorageLocationArn')
+
+	def set_StorageLocationArn(self, StorageLocationArn):  # String
+		self.add_query_param('StorageLocationArn', StorageLocationArn)
 	def get_Tags(self): # RepeatList
 		return self.get_query_params().get('Tag')
 
@@ -102,6 +120,11 @@ class ImportImageRequest(RpcRequest):
 
 	def set_DetectionStrategy(self, DetectionStrategy):  # String
 		self.add_query_param('DetectionStrategy', DetectionStrategy)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

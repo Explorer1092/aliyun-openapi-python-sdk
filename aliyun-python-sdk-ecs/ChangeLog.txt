@@ -1,3 +1,56 @@
+2026-07-01 Version: 4.24.83
+- Add ModifySystemEventAttribute.
+
+2025-04-15 Version: 4.24.82
+- Generate SDK unified.
+
+2025-03-12 Version: 4.24.81
+- Unified upgrade SDK.
+
+2025-01-14 Version: 4.24.80
+- Add EndTerminalSession.
+
+2024-12-03 Version: 4.24.79
+- Savingsplan feature.
+
+2024-10-31 Version: 4.24.78
+- DescribeInstanceTypes add CpuOptions.
+
+2024-10-30 Version: 4.24.77
+- Support describe and modify NVMe on instance.
+
+2024-10-15 Version: 4.24.76
+- Add ResourcePoolOptions.Strategy for CreateAutoProvisioningGroup.
+
+2024-09-14 Version: 4.24.75
+- Update EBS default encrypted APIs from private to public.
+- Support describe and modify source dest check property of ENI.
+
+2024-09-10 Version: 4.24.74
+- Update EBS default encrypted APIs from private to public.
+
+2024-05-23 Version: 4.24.73
+- Add SnapshotLinkId for DescribeSnapshots.
+
+2024-04-26 Version: 4.24.72
+- Add SupportedBootModes for DescribeInstanceTypes.
+
+2024-02-01 Version: 4.24.71
+- Support DryRun for DeleteInstance.
+- Support DryRun for ModifyInstanceSpec.
+
+2024-02-01 Version: 4.24.70
+- Describe tcpOptionAddress.
+
+2023-12-07 Version: 4.24.69
+- ECS SDK publish full package.
+
+2023-11-06 Version: 4.24.68
+- CreateAutoProvisioningGroup support SecurityOptions.
+
+2023-10-26 Version: 4.24.67
+- CreateAutoProvisioningGroup support SecurityOptions.
+
 2023-08-17 Version: 4.24.66
 - Supported CommandLine for StartTerminalSession.
 

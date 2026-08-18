@@ -36,6 +36,11 @@ class ModifyAppRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_Extend(self): # String
+		return self.get_query_params().get('Extend')
+
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 

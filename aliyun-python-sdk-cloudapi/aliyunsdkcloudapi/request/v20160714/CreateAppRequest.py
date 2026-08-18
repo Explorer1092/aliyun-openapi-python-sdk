@@ -36,11 +36,11 @@ class CreateAppRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
-	def get_Source(self): # String
-		return self.get_query_params().get('Source')
+	def get_Extend(self): # String
+		return self.get_query_params().get('Extend')
 
-	def set_Source(self, Source):  # String
-		self.add_query_param('Source', Source)
+	def set_Extend(self, Extend):  # String
+		self.add_query_param('Extend', Extend)
 	def get_AppName(self): # String
 		return self.get_query_params().get('AppName')
 

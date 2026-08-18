@@ -35,16 +35,15 @@ class CreateEipInstanceRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
-	def get_InstanceChargeType(self): # String
-		return self.get_query_params().get('InstanceChargeType')
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
 
-	def set_InstanceChargeType(self, InstanceChargeType):  # String
-		self.add_query_param('InstanceChargeType', InstanceChargeType)
-	def get_Bandwidth(self): # Long
-		return self.get_query_params().get('Bandwidth')
-
-	def set_Bandwidth(self, Bandwidth):  # Long
-		self.add_query_param('Bandwidth', Bandwidth)
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
@@ -55,3 +54,23 @@ class CreateEipInstanceRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
+	def get_Description(self): # String
+		return self.get_query_params().get('Description')
+
+	def set_Description(self, Description):  # String
+		self.add_query_param('Description', Description)
+	def get_InstanceChargeType(self): # String
+		return self.get_query_params().get('InstanceChargeType')
+
+	def set_InstanceChargeType(self, InstanceChargeType):  # String
+		self.add_query_param('InstanceChargeType', InstanceChargeType)
+	def get_Bandwidth(self): # Long
+		return self.get_query_params().get('Bandwidth')
+
+	def set_Bandwidth(self, Bandwidth):  # Long
+		self.add_query_param('Bandwidth', Bandwidth)

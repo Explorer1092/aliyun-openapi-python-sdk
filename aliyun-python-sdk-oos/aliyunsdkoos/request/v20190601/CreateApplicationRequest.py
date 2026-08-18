@@ -52,6 +52,11 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_ApplicationSource(self): # String
+		return self.get_query_params().get('ApplicationSource')
+
+	def set_ApplicationSource(self, ApplicationSource):  # String
+		self.add_query_param('ApplicationSource', ApplicationSource)
 	def get_Tags(self): # String
 		return self.get_query_params().get('Tags')
 
@@ -62,3 +67,8 @@ class CreateApplicationRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_ServiceId(self): # String
+		return self.get_query_params().get('ServiceId')
+
+	def set_ServiceId(self, ServiceId):  # String
+		self.add_query_param('ServiceId', ServiceId)

@@ -61,6 +61,11 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_LockReason(self, LockReason):  # String
 		self.add_query_param('LockReason', LockReason)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -100,6 +105,11 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_QueryInventory(self): # Boolean
+		return self.get_query_params().get('QueryInventory')
+
+	def set_QueryInventory(self, QueryInventory):  # Boolean
+		self.add_query_param('QueryInventory', QueryInventory)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
@@ -110,6 +120,11 @@ class DescribeDedicatedHostsRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_Status(self): # String
 		return self.get_query_params().get('Status')
 

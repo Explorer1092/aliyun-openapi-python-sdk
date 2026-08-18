@@ -35,8 +35,3 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
-	def get_product(self): # String
-		return self.get_query_params().get('product')
-
-	def set_product(self, product):  # String
-		self.add_query_param('product', product)

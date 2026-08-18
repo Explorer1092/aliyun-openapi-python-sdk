@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DeleteDBInstanceEndpointAddressRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DeleteDBInstanceEndpointAddress')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DeleteDBInstanceEndpointAddress','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,13 +46,13 @@ class DeleteDBInstanceEndpointAddressRequest(RpcRequest):
 
 	def set_ConnectionString(self, ConnectionString):  # String
 		self.add_body_params('ConnectionString', ConnectionString)
-	def get_DBInstanceEndpointId(self): # String
-		return self.get_body_params().get('DBInstanceEndpointId')
-
-	def set_DBInstanceEndpointId(self, DBInstanceEndpointId):  # String
-		self.add_body_params('DBInstanceEndpointId', DBInstanceEndpointId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_DBInstanceEndpointId(self): # String
+		return self.get_body_params().get('DBInstanceEndpointId')
+
+	def set_DBInstanceEndpointId(self, DBInstanceEndpointId):  # String
+		self.add_body_params('DBInstanceEndpointId', DBInstanceEndpointId)

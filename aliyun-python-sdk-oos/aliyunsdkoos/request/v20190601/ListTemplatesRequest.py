@@ -71,6 +71,11 @@ class ListTemplatesRequest(RpcRequest):
 
 	def set_ShareType(self, ShareType):  # String
 		self.add_query_param('ShareType', ShareType)
+	def get_IsExample(self): # Boolean
+		return self.get_query_params().get('IsExample')
+
+	def set_IsExample(self, IsExample):  # Boolean
+		self.add_query_param('IsExample', IsExample)
 	def get_HasTrigger(self): # Boolean
 		return self.get_query_params().get('HasTrigger')
 
@@ -91,6 +96,11 @@ class ListTemplatesRequest(RpcRequest):
 
 	def set_MaxResults(self, MaxResults):  # Integer
 		self.add_query_param('MaxResults', MaxResults)
+	def get_IsFavorite(self): # Boolean
+		return self.get_query_params().get('IsFavorite')
+
+	def set_IsFavorite(self, IsFavorite):  # Boolean
+		self.add_query_param('IsFavorite', IsFavorite)
 	def get_TemplateFormat(self): # String
 		return self.get_query_params().get('TemplateFormat')
 

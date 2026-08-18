@@ -24,7 +24,7 @@ import json
 class CreatePolicyV2Request(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreatePolicyV2')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreatePolicyV2','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,6 +32,11 @@ class CreatePolicyV2Request(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_PolicyType(self): # String
+		return self.get_body_params().get('PolicyType')
+
+	def set_PolicyType(self, PolicyType):  # String
+		self.add_body_params('PolicyType', PolicyType)
 	def get_Rules(self): # Array
 		return self.get_body_params().get('Rules')
 

@@ -52,11 +52,52 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_NetworkInterfaceTrafficConfig(self): # Struct
+		return self.get_query_params().get('NetworkInterfaceTrafficConfig')
+
+	def set_NetworkInterfaceTrafficConfig(self, NetworkInterfaceTrafficConfig):  # Struct
+		if NetworkInterfaceTrafficConfig.get('NetworkInterfaceTrafficMode') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.NetworkInterfaceTrafficMode', NetworkInterfaceTrafficConfig.get('NetworkInterfaceTrafficMode'))
+		if NetworkInterfaceTrafficConfig.get('QueueNumber') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.QueueNumber', NetworkInterfaceTrafficConfig.get('QueueNumber'))
+		if NetworkInterfaceTrafficConfig.get('QueuePairNumber') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.QueuePairNumber', NetworkInterfaceTrafficConfig.get('QueuePairNumber'))
+		if NetworkInterfaceTrafficConfig.get('RxQueueSize') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.RxQueueSize', NetworkInterfaceTrafficConfig.get('RxQueueSize'))
+		if NetworkInterfaceTrafficConfig.get('TxQueueSize') is not None:
+			self.add_query_param('NetworkInterfaceTrafficConfig.TxQueueSize', NetworkInterfaceTrafficConfig.get('TxQueueSize'))
+	def get_EnhancedNetwork(self): # Struct
+		return self.get_query_params().get('EnhancedNetwork')
+
+	def set_EnhancedNetwork(self, EnhancedNetwork):  # Struct
+		if EnhancedNetwork.get('EnableSriov') is not None:
+			self.add_query_param('EnhancedNetwork.EnableSriov', EnhancedNetwork.get('EnableSriov'))
+		if EnhancedNetwork.get('EnableRss') is not None:
+			self.add_query_param('EnhancedNetwork.EnableRss', EnhancedNetwork.get('EnableRss'))
+		if EnhancedNetwork.get('VirtualFunctionTotalQueueNumber') is not None:
+			self.add_query_param('EnhancedNetwork.VirtualFunctionTotalQueueNumber', EnhancedNetwork.get('VirtualFunctionTotalQueueNumber'))
+		if EnhancedNetwork.get('VirtualFunctionQuantity') is not None:
+			self.add_query_param('EnhancedNetwork.VirtualFunctionQuantity', EnhancedNetwork.get('VirtualFunctionQuantity'))
+	def get_SourceDestCheck(self): # Boolean
+		return self.get_query_params().get('SourceDestCheck')
+
+	def set_SourceDestCheck(self, SourceDestCheck):  # Boolean
+		self.add_query_param('SourceDestCheck', SourceDestCheck)
 	def get_NetworkInterfaceName(self): # String
 		return self.get_query_params().get('NetworkInterfaceName')
 
 	def set_NetworkInterfaceName(self, NetworkInterfaceName):  # String
 		self.add_query_param('NetworkInterfaceName', NetworkInterfaceName)
+	def get_TxQueueSize(self): # Integer
+		return self.get_query_params().get('TxQueueSize')
+
+	def set_TxQueueSize(self, TxQueueSize):  # Integer
+		self.add_query_param('TxQueueSize', TxQueueSize)
+	def get_DeleteOnRelease(self): # Boolean
+		return self.get_query_params().get('DeleteOnRelease')
+
+	def set_DeleteOnRelease(self, DeleteOnRelease):  # Boolean
+		self.add_query_param('DeleteOnRelease', DeleteOnRelease)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -67,11 +108,26 @@ class ModifyNetworkInterfaceAttributeRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RxQueueSize(self): # Integer
+		return self.get_query_params().get('RxQueueSize')
+
+	def set_RxQueueSize(self, RxQueueSize):  # Integer
+		self.add_query_param('RxQueueSize', RxQueueSize)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ConnectionTrackingConfiguration(self): # Struct
+		return self.get_query_params().get('ConnectionTrackingConfiguration')
+
+	def set_ConnectionTrackingConfiguration(self, ConnectionTrackingConfiguration):  # Struct
+		if ConnectionTrackingConfiguration.get('TcpEstablishedTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.TcpEstablishedTimeout', ConnectionTrackingConfiguration.get('TcpEstablishedTimeout'))
+		if ConnectionTrackingConfiguration.get('TcpClosedAndTimeWaitTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.TcpClosedAndTimeWaitTimeout', ConnectionTrackingConfiguration.get('TcpClosedAndTimeWaitTimeout'))
+		if ConnectionTrackingConfiguration.get('UdpTimeout') is not None:
+			self.add_query_param('ConnectionTrackingConfiguration.UdpTimeout', ConnectionTrackingConfiguration.get('UdpTimeout'))
 	def get_NetworkInterfaceId(self): # String
 		return self.get_query_params().get('NetworkInterfaceId')
 

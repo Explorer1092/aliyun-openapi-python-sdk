@@ -46,6 +46,16 @@ class DescribeSecurityGroupAttributeRequest(RpcRequest):
 
 	def set_SecurityGroupId(self, SecurityGroupId):  # String
 		self.add_query_param('SecurityGroupId', SecurityGroupId)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
+	def get_Attribute(self): # String
+		return self.get_query_params().get('Attribute')
+
+	def set_Attribute(self, Attribute):  # String
+		self.add_query_param('Attribute', Attribute)
 	def get_Direction(self): # String
 		return self.get_query_params().get('Direction')
 
@@ -66,3 +76,8 @@ class DescribeSecurityGroupAttributeRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

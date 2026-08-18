@@ -31,6 +31,22 @@ class GetServiceRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ShowDetails(self): # RepeatList
+		return self.get_query_params().get('ShowDetail')
+
+	def set_ShowDetails(self, ShowDetail):  # RepeatList
+		for depth1 in range(len(ShowDetail)):
+			self.add_query_param('ShowDetail.' + str(depth1 + 1), ShowDetail[depth1])
+	def get_SharedAccountType(self): # String
+		return self.get_query_params().get('SharedAccountType')
+
+	def set_SharedAccountType(self, SharedAccountType):  # String
+		self.add_query_param('SharedAccountType', SharedAccountType)
+	def get_FilterAliUid(self): # Boolean
+		return self.get_query_params().get('FilterAliUid')
+
+	def set_FilterAliUid(self, FilterAliUid):  # Boolean
+		self.add_query_param('FilterAliUid', FilterAliUid)
 	def get_ServiceVersion(self): # String
 		return self.get_query_params().get('ServiceVersion')
 

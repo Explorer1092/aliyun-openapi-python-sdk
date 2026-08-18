@@ -51,6 +51,11 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_HealthCheckURI(self, HealthCheckURI):  # String
 		self.add_query_param('HealthCheckURI', HealthCheckURI)
+	def get_XForwardedFor_SLBPORT(self): # String
+		return self.get_query_params().get('XForwardedFor_SLBPORT')
+
+	def set_XForwardedFor_SLBPORT(self, XForwardedFor_SLBPORT):  # String
+		self.add_query_param('XForwardedFor_SLBPORT', XForwardedFor_SLBPORT)
 	def get_AclStatus(self): # String
 		return self.get_query_params().get('AclStatus')
 
@@ -140,6 +145,11 @@ class CreateLoadBalancerHTTPSListenerRequest(RpcRequest):
 
 	def set_XForwardedFor_SLBID(self, XForwardedFor_SLBID):  # String
 		self.add_query_param('XForwardedFor_SLBID', XForwardedFor_SLBID)
+	def get_XForwardedFor_ClientSrcPort(self): # String
+		return self.get_query_params().get('XForwardedFor_ClientSrcPort')
+
+	def set_XForwardedFor_ClientSrcPort(self, XForwardedFor_ClientSrcPort):  # String
+		self.add_query_param('XForwardedFor_ClientSrcPort', XForwardedFor_ClientSrcPort)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 

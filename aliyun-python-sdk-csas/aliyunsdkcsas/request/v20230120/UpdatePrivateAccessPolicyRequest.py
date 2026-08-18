@@ -54,6 +54,11 @@ class UpdatePrivateAccessPolicyRequest(RpcRequest):
 	def set_TagIds(self, TagIds):  # Array
 		for index1, value1 in enumerate(TagIds):
 			self.add_body_params('TagIds.' + str(index1 + 1), value1)
+	def get_DeviceAttributeId(self): # String
+		return self.get_body_params().get('DeviceAttributeId')
+
+	def set_DeviceAttributeId(self, DeviceAttributeId):  # String
+		self.add_body_params('DeviceAttributeId', DeviceAttributeId)
 	def get_UserGroupIds(self): # Array
 		return self.get_body_params().get('UserGroupIds')
 
@@ -70,6 +75,11 @@ class UpdatePrivateAccessPolicyRequest(RpcRequest):
 
 	def set_Priority(self, Priority):  # Integer
 		self.add_body_params('Priority', Priority)
+	def get_DeviceAttributeAction(self): # String
+		return self.get_body_params().get('DeviceAttributeAction')
+
+	def set_DeviceAttributeAction(self, DeviceAttributeAction):  # String
+		self.add_body_params('DeviceAttributeAction', DeviceAttributeAction)
 	def get_ApplicationIds(self): # Array
 		return self.get_body_params().get('ApplicationIds')
 

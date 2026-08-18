@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class DeleteBackupPlanRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteBackupPlan')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'DeleteBackupPlan','hbr')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,11 @@ class DeleteBackupPlanRequest(RpcRequest):
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
+	def get_RequireNoRunningJobs(self): # Boolean
+		return self.get_query_params().get('RequireNoRunningJobs')
+
+	def set_RequireNoRunningJobs(self, RequireNoRunningJobs):  # Boolean
+		self.add_query_param('RequireNoRunningJobs', RequireNoRunningJobs)
 	def get_PlanId(self): # String
 		return self.get_query_params().get('PlanId')
 

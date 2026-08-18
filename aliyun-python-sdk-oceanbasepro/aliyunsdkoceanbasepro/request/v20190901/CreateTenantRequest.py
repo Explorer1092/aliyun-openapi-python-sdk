@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkoceanbasepro.endpoint import endpoint_data
+import json
 
 class CreateTenantRequest(RpcRequest):
 
@@ -46,6 +47,11 @@ class CreateTenantRequest(RpcRequest):
 
 	def set_Memory(self, Memory):  # Integer
 		self.add_body_params('Memory', Memory)
+	def get_LogDisk(self): # Long
+		return self.get_body_params().get('LogDisk')
+
+	def set_LogDisk(self, LogDisk):  # Long
+		self.add_body_params('LogDisk', LogDisk)
 	def get_TimeZone(self): # String
 		return self.get_body_params().get('TimeZone')
 
@@ -86,8 +92,23 @@ class CreateTenantRequest(RpcRequest):
 
 	def set_PrimaryZone(self, PrimaryZone):  # String
 		self.add_body_params('PrimaryZone', PrimaryZone)
+	def get_UserVpcOwnerId(self): # String
+		return self.get_body_params().get('UserVpcOwnerId')
+
+	def set_UserVpcOwnerId(self, UserVpcOwnerId):  # String
+		self.add_body_params('UserVpcOwnerId', UserVpcOwnerId)
+	def get_CreateParams(self): # Map
+		return self.get_body_params().get('CreateParams')
+
+	def set_CreateParams(self, CreateParams):  # Map
+		self.add_body_params("CreateParams", json.dumps(CreateParams))
 	def get_TenantName(self): # String
 		return self.get_body_params().get('TenantName')
 
 	def set_TenantName(self, TenantName):  # String
 		self.add_body_params('TenantName', TenantName)
+	def get_ReadOnlyZoneList(self): # String
+		return self.get_body_params().get('ReadOnlyZoneList')
+
+	def set_ReadOnlyZoneList(self, ReadOnlyZoneList):  # String
+		self.add_body_params('ReadOnlyZoneList', ReadOnlyZoneList)

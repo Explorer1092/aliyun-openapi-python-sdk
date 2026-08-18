@@ -56,6 +56,11 @@ class SetLiveLazyPullStreamInfoConfigRequest(RpcRequest):
 
 	def set_PullAppName(self, PullAppName):  # String
 		self.add_query_param('PullAppName', PullAppName)
+	def get_TranscodeLazy(self): # String
+		return self.get_query_params().get('TranscodeLazy')
+
+	def set_TranscodeLazy(self, TranscodeLazy):  # String
+		self.add_query_param('TranscodeLazy', TranscodeLazy)
 	def get_PullProtocol(self): # String
 		return self.get_query_params().get('PullProtocol')
 

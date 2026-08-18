@@ -36,6 +36,11 @@ class ModifyElasticityAssuranceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ClientToken(self): # String
+		return self.get_query_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_query_param('ClientToken', ClientToken)
 	def get_Description(self): # String
 		return self.get_query_params().get('Description')
 
@@ -66,3 +71,21 @@ class ModifyElasticityAssuranceRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_RecurrenceRuless(self): # RepeatList
+		return self.get_query_params().get('RecurrenceRules')
+
+	def set_RecurrenceRuless(self, RecurrenceRules):  # RepeatList
+		for depth1 in range(len(RecurrenceRules)):
+			if RecurrenceRules[depth1].get('RecurrenceType') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceType', RecurrenceRules[depth1].get('RecurrenceType'))
+			if RecurrenceRules[depth1].get('RecurrenceValue') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.RecurrenceValue', RecurrenceRules[depth1].get('RecurrenceValue'))
+			if RecurrenceRules[depth1].get('StartHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.StartHour', RecurrenceRules[depth1].get('StartHour'))
+			if RecurrenceRules[depth1].get('EndHour') is not None:
+				self.add_query_param('RecurrenceRules.' + str(depth1 + 1) + '.EndHour', RecurrenceRules[depth1].get('EndHour'))
+	def get_InstanceAmount(self): # Integer
+		return self.get_query_params().get('InstanceAmount')
+
+	def set_InstanceAmount(self, InstanceAmount):  # Integer
+		self.add_query_param('InstanceAmount', InstanceAmount)

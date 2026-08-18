@@ -47,3 +47,8 @@ class CreateServiceRequest(RoaRequest):
 
 	def set_Labels(self, Labels):  # String
 		self.add_query_param('Labels', Labels)
+	def get_WorkspaceId(self): # String
+		return self.get_query_params().get('WorkspaceId')
+
+	def set_WorkspaceId(self, WorkspaceId):  # String
+		self.add_query_param('WorkspaceId', WorkspaceId)

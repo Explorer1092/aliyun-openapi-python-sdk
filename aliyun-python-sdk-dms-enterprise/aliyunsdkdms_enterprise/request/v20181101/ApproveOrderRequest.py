@@ -61,6 +61,11 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_OldApprover(self, OldApprover):  # Long
 		self.add_query_param('OldApprover', OldApprover)
+	def get_RealLoginUserUid(self): # String
+		return self.get_query_params().get('RealLoginUserUid')
+
+	def set_RealLoginUserUid(self, RealLoginUserUid):  # String
+		self.add_query_param('RealLoginUserUid', RealLoginUserUid)
 	def get_Comment(self): # String
 		return self.get_query_params().get('Comment')
 
@@ -71,3 +76,8 @@ class ApproveOrderRequest(RpcRequest):
 
 	def set_ApprovalNodePos(self, ApprovalNodePos):  # String
 		self.add_query_param('ApprovalNodePos', ApprovalNodePos)
+	def get_NewApproverList(self): # String
+		return self.get_query_params().get('NewApproverList')
+
+	def set_NewApproverList(self, NewApproverList):  # String
+		self.add_query_param('NewApproverList', NewApproverList)

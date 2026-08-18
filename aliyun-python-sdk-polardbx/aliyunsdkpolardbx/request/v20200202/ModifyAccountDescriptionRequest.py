@@ -25,26 +25,24 @@ class ModifyAccountDescriptionRequest(RpcRequest):
 	def __init__(self):
 		RpcRequest.__init__(self, 'polardbx', '2020-02-02', 'ModifyAccountDescription','polardbx')
 		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-
-	def get_DBInstanceName(self):
+	def get_DBInstanceName(self): # String
 		return self.get_query_params().get('DBInstanceName')
 
-	def set_DBInstanceName(self,DBInstanceName):
-		self.add_query_param('DBInstanceName',DBInstanceName)
-
-	def get_AccountDescription(self):
+	def set_DBInstanceName(self, DBInstanceName):  # String
+		self.add_query_param('DBInstanceName', DBInstanceName)
+	def get_AccountDescription(self): # String
 		return self.get_query_params().get('AccountDescription')
 
-	def set_AccountDescription(self,AccountDescription):
-		self.add_query_param('AccountDescription',AccountDescription)
-
-	def get_AccountName(self):
+	def set_AccountDescription(self, AccountDescription):  # String
+		self.add_query_param('AccountDescription', AccountDescription)
+	def get_AccountName(self): # String
 		return self.get_query_params().get('AccountName')
 
-	def set_AccountName(self,AccountName):
-		self.add_query_param('AccountName',AccountName)
+	def set_AccountName(self, AccountName):  # String
+		self.add_query_param('AccountName', AccountName)

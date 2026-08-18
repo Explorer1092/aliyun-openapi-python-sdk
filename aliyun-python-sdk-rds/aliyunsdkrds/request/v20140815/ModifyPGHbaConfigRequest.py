@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyPGHbaConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyPGHbaConfig')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyPGHbaConfig','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -83,7 +83,7 @@ class ModifyPGHbaConfigRequest(RpcRequest):
 				self.add_query_param('HbaItem.' + str(depth1 + 1) + '.User', HbaItem[depth1].get('User'))
 			if HbaItem[depth1].get('Mask') is not None:
 				self.add_query_param('HbaItem.' + str(depth1 + 1) + '.Mask', HbaItem[depth1].get('Mask'))
-			if HbaItem[depth1].get('PriorityId') is not None:
-				self.add_query_param('HbaItem.' + str(depth1 + 1) + '.PriorityId', HbaItem[depth1].get('PriorityId'))
 			if HbaItem[depth1].get('Option') is not None:
 				self.add_query_param('HbaItem.' + str(depth1 + 1) + '.Option', HbaItem[depth1].get('Option'))
+			if HbaItem[depth1].get('PriorityId') is not None:
+				self.add_query_param('HbaItem.' + str(depth1 + 1) + '.PriorityId', HbaItem[depth1].get('PriorityId'))

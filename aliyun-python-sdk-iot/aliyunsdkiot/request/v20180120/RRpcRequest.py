@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class RRpcRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RRpc')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'RRpc','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -44,10 +44,10 @@ class RRpcRequest(RpcRequest):
 		self.add_query_param('IotInstanceId',IotInstanceId)
 
 	def get_RequestBase64Byte(self):
-		return self.get_query_params().get('RequestBase64Byte')
+		return self.get_body_params().get('RequestBase64Byte')
 
 	def set_RequestBase64Byte(self,RequestBase64Byte):
-		self.add_query_param('RequestBase64Byte',RequestBase64Byte)
+		self.add_body_params('RequestBase64Byte', RequestBase64Byte)
 
 	def get_ProductKey(self):
 		return self.get_query_params().get('ProductKey')

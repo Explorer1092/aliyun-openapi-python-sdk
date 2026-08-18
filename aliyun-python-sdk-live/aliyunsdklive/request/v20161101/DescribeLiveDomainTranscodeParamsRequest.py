@@ -36,6 +36,11 @@ class DescribeLiveDomainTranscodeParamsRequest(RpcRequest):
 
 	def set_pushdomain(self, pushdomain):  # String
 		self.add_query_param('pushdomain', pushdomain)
+	def get_SecurityToken(self): # String
+		return self.get_query_params().get('SecurityToken')
+
+	def set_SecurityToken(self, SecurityToken):  # String
+		self.add_query_param('SecurityToken', SecurityToken)
 	def get_app(self): # String
 		return self.get_query_params().get('app')
 

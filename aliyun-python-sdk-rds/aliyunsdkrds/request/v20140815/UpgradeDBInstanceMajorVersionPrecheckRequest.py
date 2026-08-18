@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class UpgradeDBInstanceMajorVersionPrecheckRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpgradeDBInstanceMajorVersionPrecheck')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'UpgradeDBInstanceMajorVersionPrecheck','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class UpgradeDBInstanceMajorVersionPrecheckRequest(RpcRequest):
 
 	def set_DBInstanceId(self, DBInstanceId):  # String
 		self.add_query_param('DBInstanceId', DBInstanceId)
+	def get_UpgradeMode(self): # String
+		return self.get_query_params().get('UpgradeMode')
+
+	def set_UpgradeMode(self, UpgradeMode):  # String
+		self.add_query_param('UpgradeMode', UpgradeMode)
 	def get_TargetMajorVersion(self): # String
 		return self.get_query_params().get('TargetMajorVersion')
 

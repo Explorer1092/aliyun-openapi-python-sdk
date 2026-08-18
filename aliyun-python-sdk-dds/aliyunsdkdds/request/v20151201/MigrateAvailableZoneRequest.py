@@ -18,6 +18,7 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class MigrateAvailableZoneRequest(RpcRequest):
 
@@ -25,16 +26,31 @@ class MigrateAvailableZoneRequest(RpcRequest):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'MigrateAvailableZone','dds')
 		self.set_method('POST')
 
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
+
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_SecondaryZoneId(self): # String
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
 	def get_EffectiveTime(self): # String
 		return self.get_query_params().get('EffectiveTime')
 
 	def set_EffectiveTime(self, EffectiveTime):  # String
 		self.add_query_param('EffectiveTime', EffectiveTime)
+	def get_HiddenZoneId(self): # String
+		return self.get_query_params().get('HiddenZoneId')
+
+	def set_HiddenZoneId(self, HiddenZoneId):  # String
+		self.add_query_param('HiddenZoneId', HiddenZoneId)
 	def get_DBInstanceId(self): # String
 		return self.get_query_params().get('DBInstanceId')
 

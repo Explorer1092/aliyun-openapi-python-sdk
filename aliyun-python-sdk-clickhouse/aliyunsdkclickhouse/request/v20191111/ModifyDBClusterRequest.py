@@ -23,7 +23,7 @@ from aliyunsdkclickhouse.endpoint import endpoint_data
 class ModifyDBClusterRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'ModifyDBCluster')
+		RpcRequest.__init__(self, 'clickhouse', '2019-11-11', 'ModifyDBCluster','service')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,6 +36,16 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_DbNodeStorageType(self): # String
+		return self.get_query_params().get('DbNodeStorageType')
+
+	def set_DbNodeStorageType(self, DbNodeStorageType):  # String
+		self.add_query_param('DbNodeStorageType', DbNodeStorageType)
+	def get_DisableWriteWindows(self): # String
+		return self.get_query_params().get('DisableWriteWindows')
+
+	def set_DisableWriteWindows(self, DisableWriteWindows):  # String
+		self.add_query_param('DisableWriteWindows', DisableWriteWindows)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

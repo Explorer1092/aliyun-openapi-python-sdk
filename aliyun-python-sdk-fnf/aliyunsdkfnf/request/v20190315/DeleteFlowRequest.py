@@ -24,21 +24,15 @@ class DeleteFlowRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'fnf', '2019-03-15', 'DeleteFlow','fnf')
-		self.set_method('GET')
+		self.set_method('POST')
+
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Name(self): # String
+		return self.get_body_params().get('Name')
 
-	def get_RequestId(self):
-		return self.get_query_params().get('RequestId')
-
-	def set_RequestId(self,RequestId):
-		self.add_query_param('RequestId',RequestId)
-
-	def get_Name(self):
-		return self.get_query_params().get('Name')
-
-	def set_Name(self,Name):
-		self.add_query_param('Name',Name)
+	def set_Name(self, Name):  # String
+		self.add_body_params('Name', Name)

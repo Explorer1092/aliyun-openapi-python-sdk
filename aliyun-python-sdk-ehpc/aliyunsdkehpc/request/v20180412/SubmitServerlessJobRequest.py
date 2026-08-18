@@ -24,7 +24,7 @@ import json
 class SubmitServerlessJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SubmitServerlessJob')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'SubmitServerlessJob','ehs')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -61,8 +61,7 @@ class SubmitServerlessJobRequest(RpcRequest):
 		return self.get_query_params().get('InstanceType')
 
 	def set_InstanceType(self, InstanceType):  # Array
-		for index1, value1 in enumerate(InstanceType):
-			self.add_query_param('InstanceType.' + str(index1 + 1), value1)
+		self.add_query_param("InstanceType", json.dumps(InstanceType))
 	def get_JobName(self): # String
 		return self.get_query_params().get('JobName')
 
@@ -97,8 +96,12 @@ class SubmitServerlessJobRequest(RpcRequest):
 		return self.get_query_params().get('VSwitchId')
 
 	def set_VSwitchId(self, VSwitchId):  # Array
-		for index1, value1 in enumerate(VSwitchId):
-			self.add_query_param('VSwitchId.' + str(index1 + 1), value1)
+		self.add_query_param("VSwitchId", json.dumps(VSwitchId))
+	def get_RetryStrategy(self): # Struct
+		return self.get_query_params().get('RetryStrategy')
+
+	def set_RetryStrategy(self, RetryStrategy):  # Struct
+		self.add_query_param("RetryStrategy", json.dumps(RetryStrategy))
 	def get_EphemeralStorage(self): # Integer
 		return self.get_query_params().get('EphemeralStorage')
 

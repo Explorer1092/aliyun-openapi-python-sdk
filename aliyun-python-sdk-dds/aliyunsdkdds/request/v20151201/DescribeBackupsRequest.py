@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class DescribeBackupsRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'DescribeBackups','dds')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -35,16 +41,16 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_PageNumber(self): # Integer
 		return self.get_query_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_query_param('PageNumber', PageNumber)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_PageSize(self): # Integer
 		return self.get_query_params().get('PageSize')
 
@@ -60,6 +66,11 @@ class DescribeBackupsRequest(RpcRequest):
 
 	def set_NodeId(self, NodeId):  # String
 		self.add_query_param('NodeId', NodeId)
+	def get_DestRegion(self): # String
+		return self.get_query_params().get('DestRegion')
+
+	def set_DestRegion(self, DestRegion):  # String
+		self.add_query_param('DestRegion', DestRegion)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

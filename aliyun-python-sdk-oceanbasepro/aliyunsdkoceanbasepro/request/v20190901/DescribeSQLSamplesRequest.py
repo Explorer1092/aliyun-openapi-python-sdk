@@ -31,6 +31,11 @@ class DescribeSQLSamplesRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ReturnSqlText(self): # Boolean
+		return self.get_body_params().get('ReturnSqlText')
+
+	def set_ReturnSqlText(self, ReturnSqlText):  # Boolean
+		self.add_body_params('ReturnSqlText', ReturnSqlText)
 	def get_StartTime(self): # String
 		return self.get_body_params().get('StartTime')
 

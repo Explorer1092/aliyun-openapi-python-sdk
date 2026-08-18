@@ -23,7 +23,7 @@ from aliyunsdkehpc.endpoint import endpoint_data
 class UpdateQueueConfigRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UpdateQueueConfig')
+		RpcRequest.__init__(self, 'EHPC', '2018-04-12', 'UpdateQueueConfig','ehs')
 		self.set_method('GET')
 
 		if hasattr(self, "endpoint_map"):
@@ -46,6 +46,11 @@ class UpdateQueueConfigRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_NetworkInterfaceTrafficMode(self): # String
+		return self.get_query_params().get('NetworkInterfaceTrafficMode')
+
+	def set_NetworkInterfaceTrafficMode(self, NetworkInterfaceTrafficMode):  # String
+		self.add_query_param('NetworkInterfaceTrafficMode', NetworkInterfaceTrafficMode)
 	def get_ResourceGroupId(self): # String
 		return self.get_query_params().get('ResourceGroupId')
 

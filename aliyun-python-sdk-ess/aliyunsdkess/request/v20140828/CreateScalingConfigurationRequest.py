@@ -36,6 +36,12 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_HpcClusterId(self, HpcClusterId):  # String
 		self.add_query_param('HpcClusterId', HpcClusterId)
+	def get_SecurityOptions(self): # Struct
+		return self.get_query_params().get('SecurityOptions')
+
+	def set_SecurityOptions(self, SecurityOptions):  # Struct
+		if SecurityOptions.get('ConfidentialComputingMode') is not None:
+			self.add_query_param('SecurityOptions.ConfidentialComputingMode', SecurityOptions.get('ConfidentialComputingMode'))
 	def get_SecurityEnhancementStrategy(self): # String
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -85,6 +91,20 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_InstanceDescription(self, InstanceDescription):  # String
 		self.add_query_param('InstanceDescription', InstanceDescription)
+	def get_StorageSetPartitionNumber(self): # Integer
+		return self.get_query_params().get('StorageSetPartitionNumber')
+
+	def set_StorageSetPartitionNumber(self, StorageSetPartitionNumber):  # Integer
+		self.add_query_param('StorageSetPartitionNumber', StorageSetPartitionNumber)
+	def get_CustomPrioritiess(self): # RepeatList
+		return self.get_query_params().get('CustomPriorities')
+
+	def set_CustomPrioritiess(self, CustomPriorities):  # RepeatList
+		for depth1 in range(len(CustomPriorities)):
+			if CustomPriorities[depth1].get('VswitchId') is not None:
+				self.add_query_param('CustomPriorities.' + str(depth1 + 1) + '.VswitchId', CustomPriorities[depth1].get('VswitchId'))
+			if CustomPriorities[depth1].get('InstanceType') is not None:
+				self.add_query_param('CustomPriorities.' + str(depth1 + 1) + '.InstanceType', CustomPriorities[depth1].get('InstanceType'))
 	def get_SystemDiskAutoSnapshotPolicyId(self): # String
 		return self.get_query_params().get('SystemDisk.AutoSnapshotPolicyId')
 
@@ -166,19 +186,56 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_InstancePatternInfos(self, InstancePatternInfo):  # RepeatList
 		for depth1 in range(len(InstancePatternInfo)):
+			if InstancePatternInfo[depth1].get('InstanceCategories') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('InstanceCategories'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceCategories.' + str(depth2 + 1), InstancePatternInfo[depth1].get('InstanceCategories')[depth2])
+			if InstancePatternInfo[depth1].get('Memory') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Memory', InstancePatternInfo[depth1].get('Memory'))
+			if InstancePatternInfo[depth1].get('MaximumCpuCoreCount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumCpuCoreCount', InstancePatternInfo[depth1].get('MaximumCpuCoreCount'))
+			if InstancePatternInfo[depth1].get('MaxPrice') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaxPrice', InstancePatternInfo[depth1].get('MaxPrice'))
+			if InstancePatternInfo[depth1].get('MinimumGpuAmount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumGpuAmount', InstancePatternInfo[depth1].get('MinimumGpuAmount'))
+			if InstancePatternInfo[depth1].get('MaximumGpuAmount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumGpuAmount', InstancePatternInfo[depth1].get('MaximumGpuAmount'))
+			if InstancePatternInfo[depth1].get('MaximumMemorySize') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaximumMemorySize', InstancePatternInfo[depth1].get('MaximumMemorySize'))
+			if InstancePatternInfo[depth1].get('MinimumInitialCredit') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumInitialCredit', InstancePatternInfo[depth1].get('MinimumInitialCredit'))
+			if InstancePatternInfo[depth1].get('ExcludedInstanceType') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('ExcludedInstanceType'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.ExcludedInstanceType.' + str(depth2 + 1), InstancePatternInfo[depth1].get('ExcludedInstanceType')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumEniIpv6AddressQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniIpv6AddressQuantity', InstancePatternInfo[depth1].get('MinimumEniIpv6AddressQuantity'))
+			if InstancePatternInfo[depth1].get('MinimumEniPrivateIpAddressQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniPrivateIpAddressQuantity', InstancePatternInfo[depth1].get('MinimumEniPrivateIpAddressQuantity'))
+			if InstancePatternInfo[depth1].get('BurstablePerformance') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.BurstablePerformance', InstancePatternInfo[depth1].get('BurstablePerformance'))
+			if InstancePatternInfo[depth1].get('PhysicalProcessorModels') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('PhysicalProcessorModels'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.PhysicalProcessorModels.' + str(depth2 + 1), InstancePatternInfo[depth1].get('PhysicalProcessorModels')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumCpuCoreCount') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumCpuCoreCount', InstancePatternInfo[depth1].get('MinimumCpuCoreCount'))
+			if InstancePatternInfo[depth1].get('GpuSpecs') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('GpuSpecs'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.GpuSpecs.' + str(depth2 + 1), InstancePatternInfo[depth1].get('GpuSpecs')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumEniQuantity') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumEniQuantity', InstancePatternInfo[depth1].get('MinimumEniQuantity'))
+			if InstancePatternInfo[depth1].get('MinimumMemorySize') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumMemorySize', InstancePatternInfo[depth1].get('MinimumMemorySize'))
 			if InstancePatternInfo[depth1].get('Cores') is not None:
 				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Cores', InstancePatternInfo[depth1].get('Cores'))
 			if InstancePatternInfo[depth1].get('InstanceFamilyLevel') is not None:
 				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceFamilyLevel', InstancePatternInfo[depth1].get('InstanceFamilyLevel'))
-			if InstancePatternInfo[depth1].get('Memory') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Memory', InstancePatternInfo[depth1].get('Memory'))
-			if InstancePatternInfo[depth1].get('MaxPrice') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MaxPrice', InstancePatternInfo[depth1].get('MaxPrice'))
-			if InstancePatternInfo[depth1].get('ExcludedInstanceType') is not None:
-				for depth2 in range(len(InstancePatternInfo[depth1].get('ExcludedInstanceType'))):
-					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.ExcludedInstanceType.' + str(depth2 + 1), InstancePatternInfo[depth1].get('ExcludedInstanceType')[depth2])
-			if InstancePatternInfo[depth1].get('BurstablePerformance') is not None:
-				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.BurstablePerformance', InstancePatternInfo[depth1].get('BurstablePerformance'))
+			if InstancePatternInfo[depth1].get('InstanceTypeFamilies') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('InstanceTypeFamilies'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.InstanceTypeFamilies.' + str(depth2 + 1), InstancePatternInfo[depth1].get('InstanceTypeFamilies')[depth2])
+			if InstancePatternInfo[depth1].get('MinimumBaselineCredit') is not None:
+				self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.MinimumBaselineCredit', InstancePatternInfo[depth1].get('MinimumBaselineCredit'))
+			if InstancePatternInfo[depth1].get('CpuArchitectures') is not None:
+				for depth2 in range(len(InstancePatternInfo[depth1].get('CpuArchitectures'))):
+					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.CpuArchitectures.' + str(depth2 + 1), InstancePatternInfo[depth1].get('CpuArchitectures')[depth2])
 			if InstancePatternInfo[depth1].get('Architecture') is not None:
 				for depth2 in range(len(InstancePatternInfo[depth1].get('Architecture'))):
 					self.add_query_param('InstancePatternInfo.' + str(depth1 + 1) + '.Architecture.' + str(depth2 + 1), InstancePatternInfo[depth1].get('Architecture')[depth2])
@@ -187,6 +244,20 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_Affinity(self, Affinity):  # String
 		self.add_query_param('Affinity', Affinity)
+	def get_NetworkInterfacess(self): # RepeatList
+		return self.get_query_params().get('NetworkInterfaces')
+
+	def set_NetworkInterfacess(self, NetworkInterfaces):  # RepeatList
+		for depth1 in range(len(NetworkInterfaces)):
+			if NetworkInterfaces[depth1].get('Ipv6AddressCount') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.Ipv6AddressCount', NetworkInterfaces[depth1].get('Ipv6AddressCount'))
+			if NetworkInterfaces[depth1].get('InstanceType') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.InstanceType', NetworkInterfaces[depth1].get('InstanceType'))
+			if NetworkInterfaces[depth1].get('SecurityGroupIds') is not None:
+				for depth2 in range(len(NetworkInterfaces[depth1].get('SecurityGroupIds'))):
+					self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.SecurityGroupIds.' + str(depth2 + 1), NetworkInterfaces[depth1].get('SecurityGroupIds')[depth2])
+			if NetworkInterfaces[depth1].get('NetworkInterfaceTrafficMode') is not None:
+				self.add_query_param('NetworkInterfaces.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterfaces[depth1].get('NetworkInterfaceTrafficMode'))
 	def get_ImageId(self): # String
 		return self.get_query_params().get('ImageId')
 
@@ -258,11 +329,30 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_PasswordInherit(self, PasswordInherit):  # Boolean
 		self.add_query_param('PasswordInherit', PasswordInherit)
+	def get_ResourcePoolOptions(self): # Struct
+		return self.get_query_params().get('ResourcePoolOptions')
+
+	def set_ResourcePoolOptions(self, ResourcePoolOptions):  # Struct
+		if ResourcePoolOptions.get('Strategy') is not None:
+			self.add_query_param('ResourcePoolOptions.Strategy', ResourcePoolOptions.get('Strategy'))
+		if ResourcePoolOptions.get('PrivatePoolIds') is not None:
+			for index1, value1 in enumerate(ResourcePoolOptions.get('PrivatePoolIds')):
+				self.add_query_param('ResourcePoolOptions.PrivatePoolIds.' + str(index1 + 1), value1)
 	def get_ImageName(self): # String
 		return self.get_query_params().get('ImageName')
 
 	def set_ImageName(self, ImageName):  # String
 		self.add_query_param('ImageName', ImageName)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
+	def get_DedicatedHostClusterId(self): # String
+		return self.get_query_params().get('DedicatedHostClusterId')
+
+	def set_DedicatedHostClusterId(self, DedicatedHostClusterId):  # String
+		self.add_query_param('DedicatedHostClusterId', DedicatedHostClusterId)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
@@ -382,6 +472,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_LoadBalancerWeight(self, LoadBalancerWeight):  # Integer
 		self.add_query_param('LoadBalancerWeight', LoadBalancerWeight)
+	def get_StorageSetId(self): # String
+		return self.get_query_params().get('StorageSetId')
+
+	def set_StorageSetId(self, StorageSetId):  # String
+		self.add_query_param('StorageSetId', StorageSetId)
 	def get_SystemDiskSize(self): # Integer
 		return self.get_query_params().get('SystemDisk.Size')
 
@@ -392,6 +487,11 @@ class CreateScalingConfigurationRequest(RpcRequest):
 
 	def set_ImageFamily(self, ImageFamily):  # String
 		self.add_query_param('ImageFamily', ImageFamily)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
 	def get_SystemDiskDescription(self): # String
 		return self.get_query_params().get('SystemDisk.Description')
 

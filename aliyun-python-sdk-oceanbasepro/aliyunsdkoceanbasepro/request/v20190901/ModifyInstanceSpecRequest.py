@@ -36,13 +36,28 @@ class ModifyInstanceSpecRequest(RpcRequest):
 
 	def set_InstanceClass(self, InstanceClass):  # String
 		self.add_body_params('InstanceClass', InstanceClass)
+	def get_DryRun(self): # Boolean
+		return self.get_body_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_body_params('DryRun', DryRun)
 	def get_DiskSize(self): # Long
 		return self.get_body_params().get('DiskSize')
 
 	def set_DiskSize(self, DiskSize):  # Long
 		self.add_body_params('DiskSize', DiskSize)
+	def get_DiskType(self): # String
+		return self.get_body_params().get('DiskType')
+
+	def set_DiskType(self, DiskType):  # String
+		self.add_body_params('DiskType', DiskType)
 	def get_InstanceId(self): # String
 		return self.get_body_params().get('InstanceId')
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_body_params('InstanceId', InstanceId)
+	def get_UpgradeSpecNative(self): # Boolean
+		return self.get_body_params().get('UpgradeSpecNative')
+
+	def set_UpgradeSpecNative(self, UpgradeSpecNative):  # Boolean
+		self.add_body_params('UpgradeSpecNative', UpgradeSpecNative)

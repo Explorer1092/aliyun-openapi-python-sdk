@@ -18,12 +18,18 @@
 # under the License.
 
 from aliyunsdkcore.request import RpcRequest
+from aliyunsdkdds.endpoint import endpoint_data
 
 class CreateDBInstanceRequest(RpcRequest):
 
 	def __init__(self):
 		RpcRequest.__init__(self, 'Dds', '2015-12-01', 'CreateDBInstance','dds')
 		self.set_method('POST')
+
+		if hasattr(self, "endpoint_map"):
+			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
+		if hasattr(self, "endpoint_regional"):
+			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
@@ -55,6 +61,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_NetworkType(self, NetworkType):  # String
 		self.add_query_param('NetworkType', NetworkType)
+	def get_SrcRegion(self): # String
+		return self.get_query_params().get('SrcRegion')
+
+	def set_SrcRegion(self, SrcRegion):  # String
+		self.add_query_param('SrcRegion', SrcRegion)
 	def get_StorageType(self): # String
 		return self.get_query_params().get('StorageType')
 
@@ -65,11 +76,6 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ResourceGroupId(self, ResourceGroupId):  # String
 		self.add_query_param('ResourceGroupId', ResourceGroupId)
-	def get_SecurityToken(self): # String
-		return self.get_query_params().get('SecurityToken')
-
-	def set_SecurityToken(self, SecurityToken):  # String
-		self.add_query_param('SecurityToken', SecurityToken)
 	def get_DBInstanceDescription(self): # String
 		return self.get_query_params().get('DBInstanceDescription')
 
@@ -129,6 +135,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_VSwitchId(self, VSwitchId):  # String
 		self.add_query_param('VSwitchId', VSwitchId)
+	def get_ProvisionedIops(self): # Long
+		return self.get_query_params().get('ProvisionedIops')
+
+	def set_ProvisionedIops(self, ProvisionedIops):  # Long
+		self.add_query_param('ProvisionedIops', ProvisionedIops)
 	def get_AutoRenew(self): # String
 		return self.get_query_params().get('AutoRenew')
 
@@ -199,6 +210,11 @@ class CreateDBInstanceRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
+	def get_RestoreType(self): # String
+		return self.get_query_params().get('RestoreType')
+
+	def set_RestoreType(self, RestoreType):  # String
+		self.add_query_param('RestoreType', RestoreType)
 	def get_AccountPassword(self): # String
 		return self.get_query_params().get('AccountPassword')
 

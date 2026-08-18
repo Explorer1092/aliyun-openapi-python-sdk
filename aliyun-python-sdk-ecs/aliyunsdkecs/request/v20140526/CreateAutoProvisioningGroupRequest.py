@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
 class CreateAutoProvisioningGroupRequest(RpcRequest):
 
@@ -56,6 +57,14 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.DeleteWithInstance', LaunchConfigurationDataDisk[depth1].get('DeleteWithInstance'))
 			if LaunchConfigurationDataDisk[depth1].get('Encrypted') is not None:
 				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.Encrypted', LaunchConfigurationDataDisk[depth1].get('Encrypted'))
+			if LaunchConfigurationDataDisk[depth1].get('EncryptAlgorithm') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.EncryptAlgorithm', LaunchConfigurationDataDisk[depth1].get('EncryptAlgorithm'))
+			if LaunchConfigurationDataDisk[depth1].get('ProvisionedIops') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.ProvisionedIops', LaunchConfigurationDataDisk[depth1].get('ProvisionedIops'))
+			if LaunchConfigurationDataDisk[depth1].get('BurstingEnabled') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', LaunchConfigurationDataDisk[depth1].get('BurstingEnabled'))
+			if LaunchConfigurationDataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
+				self.add_query_param('LaunchConfiguration.DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', LaunchConfigurationDataDisk[depth1].get('AutoSnapshotPolicyId'))
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
@@ -123,6 +132,15 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_DefaultTargetCapacityType(self, DefaultTargetCapacityType):  # String
 		self.add_query_param('DefaultTargetCapacityType', DefaultTargetCapacityType)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 	def get_LaunchConfigurationKeyPairName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.KeyPairName')
 
@@ -152,11 +170,27 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_LaunchTemplateId(self, LaunchTemplateId):  # String
 		self.add_query_param('LaunchTemplateId', LaunchTemplateId)
+	def get_PrePaidOptions(self): # Struct
+		return self.get_query_params().get('PrePaidOptions')
+
+	def set_PrePaidOptions(self, PrePaidOptions):  # Struct
+		if PrePaidOptions.get('SpecifyCapacityDistribution') is not None:
+			for index1, value1 in enumerate(PrePaidOptions.get('SpecifyCapacityDistribution')):
+				if value1.get('InstanceTypes') is not None:
+					for index2, value2 in enumerate(value1.get('InstanceTypes')):
+						self.add_query_param('PrePaidOptions.SpecifyCapacityDistribution.' + str(index1 + 1) + '.InstanceTypes.' + str(index2 + 1), value2)
+				if value1.get('MinTargetCapacity') is not None:
+					self.add_query_param('PrePaidOptions.SpecifyCapacityDistribution.' + str(index1 + 1) + '.MinTargetCapacity', value1.get('MinTargetCapacity'))
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_LaunchConfigurationImageFamily(self): # String
+		return self.get_query_params().get('LaunchConfiguration.ImageFamily')
+
+	def set_LaunchConfigurationImageFamily(self, LaunchConfigurationImageFamily):  # String
+		self.add_query_param('LaunchConfiguration.ImageFamily', LaunchConfigurationImageFamily)
 	def get_LaunchConfigurationSystemDiskSize(self): # Integer
 		return self.get_query_params().get('LaunchConfiguration.SystemDiskSize')
 
@@ -177,11 +211,48 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_MinTargetCapacity(self, MinTargetCapacity):  # String
 		self.add_query_param('MinTargetCapacity', MinTargetCapacity)
+	def get_ExecutionMode(self): # String
+		return self.get_query_params().get('ExecutionMode')
+
+	def set_ExecutionMode(self, ExecutionMode):  # String
+		self.add_query_param('ExecutionMode', ExecutionMode)
 	def get_MaxSpotPrice(self): # Float
 		return self.get_query_params().get('MaxSpotPrice')
 
 	def set_MaxSpotPrice(self, MaxSpotPrice):  # Float
 		self.add_query_param('MaxSpotPrice', MaxSpotPrice)
+	def get_LaunchConfiguration(self): # Struct
+		return self.get_query_params().get('LaunchConfiguration')
+
+	def set_LaunchConfiguration(self, LaunchConfiguration):  # Struct
+		if LaunchConfiguration.get('Period') is not None:
+			self.add_query_param('LaunchConfiguration.Period', LaunchConfiguration.get('Period'))
+		if LaunchConfiguration.get('PeriodUnit') is not None:
+			self.add_query_param('LaunchConfiguration.PeriodUnit', LaunchConfiguration.get('PeriodUnit'))
+		if LaunchConfiguration.get('AutoRenew') is not None:
+			self.add_query_param('LaunchConfiguration.AutoRenew', LaunchConfiguration.get('AutoRenew'))
+		if LaunchConfiguration.get('AutoRenewPeriod') is not None:
+			self.add_query_param('LaunchConfiguration.AutoRenewPeriod', LaunchConfiguration.get('AutoRenewPeriod'))
+		if LaunchConfiguration.get('SpotDuration') is not None:
+			self.add_query_param('LaunchConfiguration.SpotDuration', LaunchConfiguration.get('SpotDuration'))
+		if LaunchConfiguration.get('SpotInterruptionBehavior') is not None:
+			self.add_query_param('LaunchConfiguration.SpotInterruptionBehavior', LaunchConfiguration.get('SpotInterruptionBehavior'))
+		if LaunchConfiguration.get('ImageOptions') is not None:
+			if LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot') is not None:
+				self.add_query_param('LaunchConfiguration.ImageOptions.LoginAsNonRoot', LaunchConfiguration.get('ImageOptions').get('LoginAsNonRoot'))
+		if LaunchConfiguration.get('SchedulerOptions') is not None:
+			if LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostId') is not None:
+				self.add_query_param('LaunchConfiguration.SchedulerOptions.DedicatedHostId', LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostId'))
+			if LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostClusterId') is not None:
+				self.add_query_param('LaunchConfiguration.SchedulerOptions.DedicatedHostClusterId', LaunchConfiguration.get('SchedulerOptions').get('DedicatedHostClusterId'))
+		if LaunchConfiguration.get('SecurityOptions') is not None:
+			if LaunchConfiguration.get('SecurityOptions').get('TrustedSystemMode') is not None:
+				self.add_query_param('LaunchConfiguration.SecurityOptions.TrustedSystemMode', LaunchConfiguration.get('SecurityOptions').get('TrustedSystemMode'))
+		if LaunchConfiguration.get('CpuOptions') is not None:
+			if LaunchConfiguration.get('CpuOptions').get('Core') is not None:
+				self.add_query_param('LaunchConfiguration.CpuOptions.Core', LaunchConfiguration.get('CpuOptions').get('Core'))
+			if LaunchConfiguration.get('CpuOptions').get('ThreadsPerCore') is not None:
+				self.add_query_param('LaunchConfiguration.CpuOptions.ThreadsPerCore', LaunchConfiguration.get('CpuOptions').get('ThreadsPerCore'))
 	def get_LaunchConfigurationArns(self): # RepeatList
 		return self.get_query_params().get('LaunchConfiguration.Arn')
 
@@ -238,6 +309,12 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 			self.add_query_param('LaunchConfiguration.SystemDisk.KMSKeyId', LaunchConfigurationSystemDisk.get('KMSKeyId'))
 		if LaunchConfigurationSystemDisk.get('EncryptAlgorithm') is not None:
 			self.add_query_param('LaunchConfiguration.SystemDisk.EncryptAlgorithm', LaunchConfigurationSystemDisk.get('EncryptAlgorithm'))
+		if LaunchConfigurationSystemDisk.get('ProvisionedIops') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.ProvisionedIops', LaunchConfigurationSystemDisk.get('ProvisionedIops'))
+		if LaunchConfigurationSystemDisk.get('BurstingEnabled') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.BurstingEnabled', LaunchConfigurationSystemDisk.get('BurstingEnabled'))
+		if LaunchConfigurationSystemDisk.get('AutoSnapshotPolicyId') is not None:
+			self.add_query_param('LaunchConfiguration.SystemDisk.AutoSnapshotPolicyId', LaunchConfigurationSystemDisk.get('AutoSnapshotPolicyId'))
 	def get_LaunchConfigurationInstanceName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.InstanceName')
 
@@ -253,6 +330,19 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 
 	def set_SpotAllocationStrategy(self, SpotAllocationStrategy):  # String
 		self.add_query_param('SpotAllocationStrategy', SpotAllocationStrategy)
+	def get_ResourcePoolOptions(self): # Struct
+		return self.get_query_params().get('ResourcePoolOptions')
+
+	def set_ResourcePoolOptions(self, ResourcePoolOptions):  # Struct
+		self.add_query_param("ResourcePoolOptions", json.dumps(ResourcePoolOptions))
+	def get_CandidateOptions(self): # Struct
+		return self.get_query_params().get('CandidateOptions')
+
+	def set_CandidateOptions(self, CandidateOptions):  # Struct
+		if CandidateOptions.get('TimeoutMinutes') is not None:
+			self.add_query_param('CandidateOptions.TimeoutMinutes', CandidateOptions.get('TimeoutMinutes'))
+		if CandidateOptions.get('Evaluate') is not None:
+			self.add_query_param('CandidateOptions.Evaluate', CandidateOptions.get('Evaluate'))
 	def get_TerminateInstances(self): # Boolean
 		return self.get_query_params().get('TerminateInstances')
 
@@ -310,6 +400,8 @@ class CreateAutoProvisioningGroupRequest(RpcRequest):
 				for depth2 in range(len(LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface'))):
 					if LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface')[depth2].get('VSwitchId') is not None:
 						self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.SecondaryNetworkInterface.'  + str(depth2 + 1) + '.VSwitchId', LaunchTemplateConfig[depth1].get('SecondaryNetworkInterface')[depth2].get('VSwitchId'))
+			if LaunchTemplateConfig[depth1].get('ImageId') is not None:
+				self.add_query_param('LaunchTemplateConfig.' + str(depth1 + 1) + '.ImageId', LaunchTemplateConfig[depth1].get('ImageId'))
 	def get_LaunchConfigurationRamRoleName(self): # String
 		return self.get_query_params().get('LaunchConfiguration.RamRoleName')
 

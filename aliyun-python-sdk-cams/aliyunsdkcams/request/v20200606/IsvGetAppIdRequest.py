@@ -23,7 +23,7 @@ from aliyunsdkcams.endpoint import endpoint_data
 class IsvGetAppIdRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'IsvGetAppId')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'IsvGetAppId','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,3 +36,8 @@ class IsvGetAppIdRequest(RpcRequest):
 
 	def set_Type(self, Type):  # String
 		self.add_body_params('Type', Type)
+	def get_Permissions(self): # String
+		return self.get_body_params().get('Permissions')
+
+	def set_Permissions(self, Permissions):  # String
+		self.add_body_params('Permissions', Permissions)

@@ -23,7 +23,7 @@ from aliyunsdkiot.endpoint import endpoint_data
 class PubRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'Pub')
+		RpcRequest.__init__(self, 'Iot', '2018-01-20', 'Pub','iot')
 		self.set_method('POST')
 		if hasattr(self, "endpoint_map"):
 			setattr(self, "endpoint_map", endpoint_data.getEndpointMap())
@@ -76,6 +76,12 @@ class PubRequest(RpcRequest):
 
 	def set_ResponseTopic(self,ResponseTopic):
 		self.add_query_param('ResponseTopic',ResponseTopic)
+
+	def get_TopicAlias(self):
+		return self.get_query_params().get('TopicAlias')
+
+	def set_TopicAlias(self,TopicAlias):
+		self.add_query_param('TopicAlias',TopicAlias)
 
 	def get_TopicFullName(self):
 		return self.get_query_params().get('TopicFullName')

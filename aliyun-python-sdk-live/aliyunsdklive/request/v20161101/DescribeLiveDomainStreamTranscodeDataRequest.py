@@ -31,6 +31,11 @@ class DescribeLiveDomainStreamTranscodeDataRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Precision(self): # String
+		return self.get_query_params().get('Precision')
+
+	def set_Precision(self, Precision):  # String
+		self.add_query_param('Precision', Precision)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 

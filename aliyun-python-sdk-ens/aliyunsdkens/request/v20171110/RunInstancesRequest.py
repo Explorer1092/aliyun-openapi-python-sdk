@@ -76,6 +76,15 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_EnsRegionId(self, EnsRegionId):  # String
 		self.add_query_param('EnsRegionId', EnsRegionId)
+	def get_Tags(self): # RepeatList
+		return self.get_query_params().get('Tag')
+
+	def set_Tags(self, Tag):  # RepeatList
+		for depth1 in range(len(Tag)):
+			if Tag[depth1].get('Value') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Period(self): # Long
 		return self.get_query_params().get('Period')
 
@@ -86,6 +95,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PublicIpIdentification(self, PublicIpIdentification):  # Boolean
 		self.add_query_param('PublicIpIdentification', PublicIpIdentification)
+	def get_BillingCycle(self): # String
+		return self.get_query_params().get('BillingCycle')
+
+	def set_BillingCycle(self, BillingCycle):  # String
+		self.add_query_param('BillingCycle', BillingCycle)
 	def get_VSwitchId(self): # String
 		return self.get_query_params().get('VSwitchId')
 
@@ -96,6 +110,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_PrivateIpAddress(self, PrivateIpAddress):  # String
 		self.add_query_param('PrivateIpAddress', PrivateIpAddress)
+	def get_SpotStrategy(self): # String
+		return self.get_query_params().get('SpotStrategy')
+
+	def set_SpotStrategy(self, SpotStrategy):  # String
+		self.add_query_param('SpotStrategy', SpotStrategy)
 	def get_PeriodUnit(self): # String
 		return self.get_query_params().get('PeriodUnit')
 
@@ -136,6 +155,11 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_InternetMaxBandwidthOut(self, InternetMaxBandwidthOut):  # Long
 		self.add_query_param('InternetMaxBandwidthOut', InternetMaxBandwidthOut)
+	def get_AutoUseCoupon(self): # String
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # String
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_UserData(self): # String
 		return self.get_query_params().get('UserData')
 
@@ -161,6 +185,21 @@ class RunInstancesRequest(RpcRequest):
 
 	def set_Amount(self, Amount):  # Long
 		self.add_query_param('Amount', Amount)
+	def get_AutoReleaseTime(self): # String
+		return self.get_query_params().get('AutoReleaseTime')
+
+	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
+		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_IpType(self): # String
+		return self.get_query_params().get('IpType')
+
+	def set_IpType(self, IpType):  # String
+		self.add_query_param('IpType', IpType)
+	def get_SpotDuration(self): # Integer
+		return self.get_query_params().get('SpotDuration')
+
+	def set_SpotDuration(self, SpotDuration):  # Integer
+		self.add_query_param('SpotDuration', SpotDuration)
 	def get_DataDisk(self): # Array
 		return self.get_query_params().get('DataDisk')
 

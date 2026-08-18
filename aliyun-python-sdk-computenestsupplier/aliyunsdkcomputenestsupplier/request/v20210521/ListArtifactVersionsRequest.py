@@ -36,11 +36,11 @@ class ListArtifactVersionsRequest(RpcRequest):
 
 	def set_NextToken(self, NextToken):  # String
 		self.add_query_param('NextToken', NextToken)
-	def get_MaxResult(self): # String
-		return self.get_query_params().get('MaxResult')
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
 
-	def set_MaxResult(self, MaxResult):  # String
-		self.add_query_param('MaxResult', MaxResult)
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)
 	def get_ArtifactId(self): # String
 		return self.get_query_params().get('ArtifactId')
 

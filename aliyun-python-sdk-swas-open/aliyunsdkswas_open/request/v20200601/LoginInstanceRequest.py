@@ -35,6 +35,11 @@ class LoginInstanceRequest(RpcRequest):
 
 	def set_InstanceId(self, InstanceId):  # String
 		self.add_query_param('InstanceId', InstanceId)
+	def get_Port(self): # Integer
+		return self.get_query_params().get('Port')
+
+	def set_Port(self, Port):  # Integer
+		self.add_query_param('Port', Port)
 	def get_Username(self): # String
 		return self.get_query_params().get('Username')
 

@@ -31,11 +31,21 @@ class ModifyDBClusterRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_ModifyRowCompression(self): # String
+		return self.get_query_params().get('ModifyRowCompression')
+
+	def set_ModifyRowCompression(self, ModifyRowCompression):  # String
+		self.add_query_param('ModifyRowCompression', ModifyRowCompression)
 	def get_ResourceOwnerId(self): # Long
 		return self.get_query_params().get('ResourceOwnerId')
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_TableMeta(self): # String
+		return self.get_query_params().get('TableMeta')
+
+	def set_TableMeta(self, TableMeta):  # String
+		self.add_query_param('TableMeta', TableMeta)
 	def get_StandbyHAMode(self): # String
 		return self.get_query_params().get('StandbyHAMode')
 
@@ -56,6 +66,11 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_DBNodeCrashList(self): # String
+		return self.get_query_params().get('DBNodeCrashList')
+
+	def set_DBNodeCrashList(self, DBNodeCrashList):  # String
+		self.add_query_param('DBNodeCrashList', DBNodeCrashList)
 	def get_FaultSimulateMode(self): # String
 		return self.get_query_params().get('FaultSimulateMode')
 
@@ -66,16 +81,31 @@ class ModifyDBClusterRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_CompressStorage(self): # String
+		return self.get_query_params().get('CompressStorage')
+
+	def set_CompressStorage(self, CompressStorage):  # String
+		self.add_query_param('CompressStorage', CompressStorage)
 	def get_StorageUpperBound(self): # Long
 		return self.get_query_params().get('StorageUpperBound')
 
 	def set_StorageUpperBound(self, StorageUpperBound):  # Long
 		self.add_query_param('StorageUpperBound', StorageUpperBound)
+	def get_ImciAutoIndex(self): # String
+		return self.get_query_params().get('ImciAutoIndex')
+
+	def set_ImciAutoIndex(self, ImciAutoIndex):  # String
+		self.add_query_param('ImciAutoIndex', ImciAutoIndex)
 	def get_StorageAutoScale(self): # String
 		return self.get_query_params().get('StorageAutoScale')
 
 	def set_StorageAutoScale(self, StorageAutoScale):  # String
 		self.add_query_param('StorageAutoScale', StorageAutoScale)
+	def get_FaultInjectionType(self): # String
+		return self.get_query_params().get('FaultInjectionType')
+
+	def set_FaultInjectionType(self, FaultInjectionType):  # String
+		self.add_query_param('FaultInjectionType', FaultInjectionType)
 	def get_DataSyncMode(self): # String
 		return self.get_query_params().get('DataSyncMode')
 

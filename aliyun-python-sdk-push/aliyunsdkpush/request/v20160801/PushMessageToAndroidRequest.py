@@ -41,6 +41,11 @@ class PushMessageToAndroidRequest(RpcRequest):
 
 	def set_Body(self, Body):  # String
 		self.add_query_param('Body', Body)
+	def get_StoreOffline(self): # Boolean
+		return self.get_query_params().get('StoreOffline')
+
+	def set_StoreOffline(self, StoreOffline):  # Boolean
+		self.add_query_param('StoreOffline', StoreOffline)
 	def get_JobKey(self): # String
 		return self.get_query_params().get('JobKey')
 

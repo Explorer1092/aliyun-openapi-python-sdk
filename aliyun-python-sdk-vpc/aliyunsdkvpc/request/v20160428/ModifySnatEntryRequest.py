@@ -46,11 +46,21 @@ class ModifySnatEntryRequest(RpcRequest):
 
 	def set_SnatIp(self, SnatIp):  # String
 		self.add_query_param('SnatIp', SnatIp)
+	def get_EipAffinity(self): # Integer
+		return self.get_query_params().get('EipAffinity')
+
+	def set_EipAffinity(self, EipAffinity):  # Integer
+		self.add_query_param('EipAffinity', EipAffinity)
 	def get_SnatEntryId(self): # String
 		return self.get_query_params().get('SnatEntryId')
 
 	def set_SnatEntryId(self, SnatEntryId):  # String
 		self.add_query_param('SnatEntryId', SnatEntryId)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -76,3 +86,8 @@ class ModifySnatEntryRequest(RpcRequest):
 
 	def set_SnatEntryName(self, SnatEntryName):  # String
 		self.add_query_param('SnatEntryName', SnatEntryName)
+	def get_NetworkInterfaceId(self): # String
+		return self.get_query_params().get('NetworkInterfaceId')
+
+	def set_NetworkInterfaceId(self, NetworkInterfaceId):  # String
+		self.add_query_param('NetworkInterfaceId', NetworkInterfaceId)

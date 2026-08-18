@@ -41,6 +41,11 @@ class DescribeDatabasesRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
+	def get_InstanceId(self): # String
+		return self.get_body_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_body_params('InstanceId', InstanceId)
 	def get_DatabaseName(self): # String
 		return self.get_body_params().get('DatabaseName')
 

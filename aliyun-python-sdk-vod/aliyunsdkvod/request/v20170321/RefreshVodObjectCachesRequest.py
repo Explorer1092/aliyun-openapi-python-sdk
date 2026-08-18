@@ -36,11 +36,6 @@ class RefreshVodObjectCachesRequest(RpcRequest):
 
 	def set_ObjectPath(self, ObjectPath):  # String
 		self.add_query_param('ObjectPath', ObjectPath)
-	def get_OwnerId(self): # Long
-		return self.get_query_params().get('OwnerId')
-
-	def set_OwnerId(self, OwnerId):  # Long
-		self.add_query_param('OwnerId', OwnerId)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 
@@ -51,3 +46,13 @@ class RefreshVodObjectCachesRequest(RpcRequest):
 
 	def set_ObjectType(self, ObjectType):  # String
 		self.add_query_param('ObjectType', ObjectType)
+	def get_OwnerId(self): # Long
+		return self.get_query_params().get('OwnerId')
+
+	def set_OwnerId(self, OwnerId):  # Long
+		self.add_query_param('OwnerId', OwnerId)
+	def get_Force(self): # Boolean
+		return self.get_query_params().get('Force')
+
+	def set_Force(self, Force):  # Boolean
+		self.add_query_param('Force', Force)

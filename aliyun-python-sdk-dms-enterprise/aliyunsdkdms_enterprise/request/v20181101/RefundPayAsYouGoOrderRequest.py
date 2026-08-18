@@ -41,3 +41,8 @@ class RefundPayAsYouGoOrderRequest(RpcRequest):
 
 	def set_OrderId(self, OrderId):  # String
 		self.add_query_param('OrderId', OrderId)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)

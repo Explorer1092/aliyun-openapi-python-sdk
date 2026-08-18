@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class UpdateJobRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateJob')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'UpdateJob','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -41,6 +41,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_FailTimes(self, FailTimes):  # Integer
 		self.add_body_params('FailTimes', FailTimes)
+	def get_StartTime(self): # Long
+		return self.get_body_params().get('StartTime')
+
+	def set_StartTime(self, StartTime):  # Long
+		self.add_body_params('StartTime', StartTime)
 	def get_JobId(self): # Long
 		return self.get_body_params().get('JobId')
 
@@ -71,6 +76,11 @@ class UpdateJobRequest(RpcRequest):
 
 	def set_DispatcherSize(self, DispatcherSize):  # Integer
 		self.add_body_params('DispatcherSize', DispatcherSize)
+	def get_Priority(self): # Integer
+		return self.get_query_params().get('Priority')
+
+	def set_Priority(self, Priority):  # Integer
+		self.add_query_param('Priority', Priority)
 	def get_TaskAttemptInterval(self): # Integer
 		return self.get_body_params().get('TaskAttemptInterval')
 

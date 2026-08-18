@@ -24,7 +24,7 @@ import json
 class ModifyChatappTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ModifyChatappTemplate')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ModifyChatappTemplate','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -57,6 +57,11 @@ class ModifyChatappTemplateRequest(RpcRequest):
 
 	def set_TemplateType(self, TemplateType):  # String
 		self.add_body_params('TemplateType', TemplateType)
+	def get_TemplateName(self): # String
+		return self.get_body_params().get('TemplateName')
+
+	def set_TemplateName(self, TemplateName):  # String
+		self.add_body_params('TemplateName', TemplateName)
 	def get_IsvCode(self): # String
 		return self.get_body_params().get('IsvCode')
 
@@ -72,6 +77,11 @@ class ModifyChatappTemplateRequest(RpcRequest):
 
 	def set_Category(self, Category):  # String
 		self.add_body_params('Category', Category)
+	def get_MessageSendTtlSeconds(self): # Integer
+		return self.get_body_params().get('MessageSendTtlSeconds')
+
+	def set_MessageSendTtlSeconds(self, MessageSendTtlSeconds):  # Integer
+		self.add_body_params('MessageSendTtlSeconds', MessageSendTtlSeconds)
 	def get_TemplateCode(self): # String
 		return self.get_body_params().get('TemplateCode')
 

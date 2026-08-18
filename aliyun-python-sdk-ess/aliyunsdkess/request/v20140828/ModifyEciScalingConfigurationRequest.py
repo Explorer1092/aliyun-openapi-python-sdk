@@ -38,24 +38,19 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 		for depth1 in range(len(Container)):
 			if Container[depth1].get('Stdin') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.Stdin', Container[depth1].get('Stdin'))
-			if Container[depth1].get('Memory') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.Memory', Container[depth1].get('Memory'))
 			if Container[depth1].get('LivenessProbe.Exec.Command') is not None:
 				for depth2 in range(len(Container[depth1].get('LivenessProbe.Exec.Command'))):
 					self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.Exec.Command.' + str(depth2 + 1), Container[depth1].get('LivenessProbe.Exec.Command')[depth2])
+			if Container[depth1].get('LifecyclePostStartHandlerHttpGetPort') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerHttpGetPort', Container[depth1].get('LifecyclePostStartHandlerHttpGetPort'))
 			if Container[depth1].get('WorkingDir') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.WorkingDir', Container[depth1].get('WorkingDir'))
 			if Container[depth1].get('ReadinessProbe.HttpGet.Port') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.HttpGet.Port', Container[depth1].get('ReadinessProbe.HttpGet.Port'))
-			if Container[depth1].get('ReadinessProbe.FailureThreshold') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.FailureThreshold', Container[depth1].get('ReadinessProbe.FailureThreshold'))
 			if Container[depth1].get('LivenessProbe.HttpGet.Port') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.HttpGet.Port', Container[depth1].get('LivenessProbe.HttpGet.Port'))
-			if Container[depth1].get('Arg') is not None:
-				for depth2 in range(len(Container[depth1].get('Arg'))):
-					self.add_query_param('Container.' + str(depth1 + 1) + '.Arg.' + str(depth2 + 1), Container[depth1].get('Arg')[depth2])
-			if Container[depth1].get('ReadinessProbe.SuccessThreshold') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.SuccessThreshold', Container[depth1].get('ReadinessProbe.SuccessThreshold'))
+			if Container[depth1].get('LifecyclePreStopHandlerTcpSocketPort') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerTcpSocketPort', Container[depth1].get('LifecyclePreStopHandlerTcpSocketPort'))
 			if Container[depth1].get('VolumeMount') is not None:
 				for depth2 in range(len(Container[depth1].get('VolumeMount'))):
 					if Container[depth1].get('VolumeMount')[depth2].get('MountPath') is not None:
@@ -70,49 +65,88 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 						self.add_query_param('Container.' + str(depth1 + 1) + '.VolumeMount.'  + str(depth2 + 1) + '.SubPath', Container[depth1].get('VolumeMount')[depth2].get('SubPath'))
 			if Container[depth1].get('Image') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.Image', Container[depth1].get('Image'))
-			if Container[depth1].get('SecurityContext.Capability.Add') is not None:
-				for depth2 in range(len(Container[depth1].get('SecurityContext.Capability.Add'))):
-					self.add_query_param('Container.' + str(depth1 + 1) + '.SecurityContext.Capability.Add.' + str(depth2 + 1), Container[depth1].get('SecurityContext.Capability.Add')[depth2])
-			if Container[depth1].get('ReadinessProbe.InitialDelaySeconds') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.InitialDelaySeconds', Container[depth1].get('ReadinessProbe.InitialDelaySeconds'))
+			if Container[depth1].get('LifecyclePostStartHandlerExec') is not None:
+				for depth2 in range(len(Container[depth1].get('LifecyclePostStartHandlerExec'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerExec.' + str(depth2 + 1), Container[depth1].get('LifecyclePostStartHandlerExec')[depth2])
 			if Container[depth1].get('Cpu') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.Cpu', Container[depth1].get('Cpu'))
-			if Container[depth1].get('ReadinessProbe.Exec.Command') is not None:
-				for depth2 in range(len(Container[depth1].get('ReadinessProbe.Exec.Command'))):
-					self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.Exec.Command.' + str(depth2 + 1), Container[depth1].get('ReadinessProbe.Exec.Command')[depth2])
-			if Container[depth1].get('ReadinessProbe.HttpGet.Scheme') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.HttpGet.Scheme', Container[depth1].get('ReadinessProbe.HttpGet.Scheme'))
 			if Container[depth1].get('ReadinessProbe.HttpGet.Path') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.HttpGet.Path', Container[depth1].get('ReadinessProbe.HttpGet.Path'))
 			if Container[depth1].get('Gpu') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.Gpu', Container[depth1].get('Gpu'))
 			if Container[depth1].get('StdinOnce') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.StdinOnce', Container[depth1].get('StdinOnce'))
-			if Container[depth1].get('ImagePullPolicy') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.ImagePullPolicy', Container[depth1].get('ImagePullPolicy'))
-			if Container[depth1].get('Command') is not None:
-				for depth2 in range(len(Container[depth1].get('Command'))):
-					self.add_query_param('Container.' + str(depth1 + 1) + '.Command.' + str(depth2 + 1), Container[depth1].get('Command')[depth2])
+			if Container[depth1].get('LifecyclePostStartHandlerTcpSocketHost') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerTcpSocketHost', Container[depth1].get('LifecyclePostStartHandlerTcpSocketHost'))
 			if Container[depth1].get('LivenessProbe.SuccessThreshold') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.SuccessThreshold', Container[depth1].get('LivenessProbe.SuccessThreshold'))
 			if Container[depth1].get('SecurityContext.RunAsUser') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.SecurityContext.RunAsUser', Container[depth1].get('SecurityContext.RunAsUser'))
-			if Container[depth1].get('LivenessProbe.HttpGet.Path') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.HttpGet.Path', Container[depth1].get('LivenessProbe.HttpGet.Path'))
 			if Container[depth1].get('LivenessProbe.PeriodSeconds') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.PeriodSeconds', Container[depth1].get('LivenessProbe.PeriodSeconds'))
 			if Container[depth1].get('LivenessProbe.InitialDelaySeconds') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.InitialDelaySeconds', Container[depth1].get('LivenessProbe.InitialDelaySeconds'))
-			if Container[depth1].get('LivenessProbe.TimeoutSeconds') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.TimeoutSeconds', Container[depth1].get('LivenessProbe.TimeoutSeconds'))
-			if Container[depth1].get('LivenessProbe.TcpSocket.Port') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.TcpSocket.Port', Container[depth1].get('LivenessProbe.TcpSocket.Port'))
 			if Container[depth1].get('Port') is not None:
 				for depth2 in range(len(Container[depth1].get('Port'))):
 					if Container[depth1].get('Port')[depth2].get('Protocol') is not None:
 						self.add_query_param('Container.' + str(depth1 + 1) + '.Port.'  + str(depth2 + 1) + '.Protocol', Container[depth1].get('Port')[depth2].get('Protocol'))
 					if Container[depth1].get('Port')[depth2].get('Port') is not None:
 						self.add_query_param('Container.' + str(depth1 + 1) + '.Port.'  + str(depth2 + 1) + '.Port', Container[depth1].get('Port')[depth2].get('Port'))
+			if Container[depth1].get('Name') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.Name', Container[depth1].get('Name'))
+			if Container[depth1].get('LifecyclePreStopHandlerTcpSocketHost') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerTcpSocketHost', Container[depth1].get('LifecyclePreStopHandlerTcpSocketHost'))
+			if Container[depth1].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.SecurityContext.ReadOnlyRootFilesystem', Container[depth1].get('SecurityContext.ReadOnlyRootFilesystem'))
+			if Container[depth1].get('LifecyclePreStopHandlerHttpGetHost') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerHttpGetHost', Container[depth1].get('LifecyclePreStopHandlerHttpGetHost'))
+			if Container[depth1].get('Memory') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.Memory', Container[depth1].get('Memory'))
+			if Container[depth1].get('LifecyclePreStopHandlerHttpGetScheme') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerHttpGetScheme', Container[depth1].get('LifecyclePreStopHandlerHttpGetScheme'))
+			if Container[depth1].get('LifecyclePostStartHandlerTcpSocketPort') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerTcpSocketPort', Container[depth1].get('LifecyclePostStartHandlerTcpSocketPort'))
+			if Container[depth1].get('LifecyclePreStopHandlerHttpGetPath') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerHttpGetPath', Container[depth1].get('LifecyclePreStopHandlerHttpGetPath'))
+			if Container[depth1].get('LifecyclePostStartHandlerHttpGetHost') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerHttpGetHost', Container[depth1].get('LifecyclePostStartHandlerHttpGetHost'))
+			if Container[depth1].get('ReadinessProbe.FailureThreshold') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.FailureThreshold', Container[depth1].get('ReadinessProbe.FailureThreshold'))
+			if Container[depth1].get('Arg') is not None:
+				for depth2 in range(len(Container[depth1].get('Arg'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.Arg.' + str(depth2 + 1), Container[depth1].get('Arg')[depth2])
+			if Container[depth1].get('ReadinessProbe.SuccessThreshold') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.SuccessThreshold', Container[depth1].get('ReadinessProbe.SuccessThreshold'))
+			if Container[depth1].get('LifecyclePostStartHandlerHttpGetPath') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerHttpGetPath', Container[depth1].get('LifecyclePostStartHandlerHttpGetPath'))
+			if Container[depth1].get('LifecyclePreStopHandlerExec') is not None:
+				for depth2 in range(len(Container[depth1].get('LifecyclePreStopHandlerExec'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerExec.' + str(depth2 + 1), Container[depth1].get('LifecyclePreStopHandlerExec')[depth2])
+			if Container[depth1].get('SecurityContext.Capability.Add') is not None:
+				for depth2 in range(len(Container[depth1].get('SecurityContext.Capability.Add'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.SecurityContext.Capability.Add.' + str(depth2 + 1), Container[depth1].get('SecurityContext.Capability.Add')[depth2])
+			if Container[depth1].get('ReadinessProbe.InitialDelaySeconds') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.InitialDelaySeconds', Container[depth1].get('ReadinessProbe.InitialDelaySeconds'))
+			if Container[depth1].get('ReadinessProbe.Exec.Command') is not None:
+				for depth2 in range(len(Container[depth1].get('ReadinessProbe.Exec.Command'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.Exec.Command.' + str(depth2 + 1), Container[depth1].get('ReadinessProbe.Exec.Command')[depth2])
+			if Container[depth1].get('ReadinessProbe.HttpGet.Scheme') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.HttpGet.Scheme', Container[depth1].get('ReadinessProbe.HttpGet.Scheme'))
+			if Container[depth1].get('LifecyclePreStopHandlerHttpGetPort') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePreStopHandlerHttpGetPort', Container[depth1].get('LifecyclePreStopHandlerHttpGetPort'))
+			if Container[depth1].get('ImagePullPolicy') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.ImagePullPolicy', Container[depth1].get('ImagePullPolicy'))
+			if Container[depth1].get('Command') is not None:
+				for depth2 in range(len(Container[depth1].get('Command'))):
+					self.add_query_param('Container.' + str(depth1 + 1) + '.Command.' + str(depth2 + 1), Container[depth1].get('Command')[depth2])
+			if Container[depth1].get('LivenessProbe.HttpGet.Path') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.HttpGet.Path', Container[depth1].get('LivenessProbe.HttpGet.Path'))
+			if Container[depth1].get('LifecyclePostStartHandlerHttpGetScheme') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LifecyclePostStartHandlerHttpGetScheme', Container[depth1].get('LifecyclePostStartHandlerHttpGetScheme'))
+			if Container[depth1].get('LivenessProbe.TimeoutSeconds') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.TimeoutSeconds', Container[depth1].get('LivenessProbe.TimeoutSeconds'))
+			if Container[depth1].get('LivenessProbe.TcpSocket.Port') is not None:
+				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.TcpSocket.Port', Container[depth1].get('LivenessProbe.TcpSocket.Port'))
 			if Container[depth1].get('ReadinessProbe.PeriodSeconds') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.ReadinessProbe.PeriodSeconds', Container[depth1].get('ReadinessProbe.PeriodSeconds'))
 			if Container[depth1].get('EnvironmentVar') is not None:
@@ -125,10 +159,6 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 						self.add_query_param('Container.' + str(depth1 + 1) + '.EnvironmentVar.'  + str(depth2 + 1) + '.Key', Container[depth1].get('EnvironmentVar')[depth2].get('Key'))
 			if Container[depth1].get('Tty') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.Tty', Container[depth1].get('Tty'))
-			if Container[depth1].get('Name') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.Name', Container[depth1].get('Name'))
-			if Container[depth1].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
-				self.add_query_param('Container.' + str(depth1 + 1) + '.SecurityContext.ReadOnlyRootFilesystem', Container[depth1].get('SecurityContext.ReadOnlyRootFilesystem'))
 			if Container[depth1].get('LivenessProbe.FailureThreshold') is not None:
 				self.add_query_param('Container.' + str(depth1 + 1) + '.LivenessProbe.FailureThreshold', Container[depth1].get('LivenessProbe.FailureThreshold'))
 			if Container[depth1].get('ReadinessProbe.TimeoutSeconds') is not None:
@@ -203,6 +233,11 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 
 	def set_CpuOptionsThreadsPerCore(self, CpuOptionsThreadsPerCore):  # Integer
 		self.add_query_param('CpuOptionsThreadsPerCore', CpuOptionsThreadsPerCore)
+	def get_DataCachePL(self): # String
+		return self.get_query_params().get('DataCachePL')
+
+	def set_DataCachePL(self, DataCachePL):  # String
+		self.add_query_param('DataCachePL', DataCachePL)
 	def get_Ipv6AddressCount(self): # Integer
 		return self.get_query_params().get('Ipv6AddressCount')
 
@@ -302,16 +337,31 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 
 	def set_EphemeralStorage(self, EphemeralStorage):  # Integer
 		self.add_query_param('EphemeralStorage', EphemeralStorage)
+	def get_DataCacheProvisionedIops(self): # Integer
+		return self.get_query_params().get('DataCacheProvisionedIops')
+
+	def set_DataCacheProvisionedIops(self, DataCacheProvisionedIops):  # Integer
+		self.add_query_param('DataCacheProvisionedIops', DataCacheProvisionedIops)
 	def get_EipBandwidth(self): # Integer
 		return self.get_query_params().get('EipBandwidth')
 
 	def set_EipBandwidth(self, EipBandwidth):  # Integer
 		self.add_query_param('EipBandwidth', EipBandwidth)
+	def get_GpuDriverVersion(self): # String
+		return self.get_query_params().get('GpuDriverVersion')
+
+	def set_GpuDriverVersion(self, GpuDriverVersion):  # String
+		self.add_query_param('GpuDriverVersion', GpuDriverVersion)
 	def get_CostOptimization(self): # Boolean
 		return self.get_query_params().get('CostOptimization')
 
 	def set_CostOptimization(self, CostOptimization):  # Boolean
 		self.add_query_param('CostOptimization', CostOptimization)
+	def get_DataCacheBurstingEnabled(self): # Boolean
+		return self.get_query_params().get('DataCacheBurstingEnabled')
+
+	def set_DataCacheBurstingEnabled(self, DataCacheBurstingEnabled):  # Boolean
+		self.add_query_param('DataCacheBurstingEnabled', DataCacheBurstingEnabled)
 	def get_Memory(self): # Float
 		return self.get_query_params().get('Memory')
 
@@ -341,6 +391,11 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 				self.add_query_param('SecurityContextSysctl.' + str(depth1 + 1) + '.Name', SecurityContextSysctl[depth1].get('Name'))
 			if SecurityContextSysctl[depth1].get('Value') is not None:
 				self.add_query_param('SecurityContextSysctl.' + str(depth1 + 1) + '.Value', SecurityContextSysctl[depth1].get('Value'))
+	def get_DataCacheBucket(self): # String
+		return self.get_query_params().get('DataCacheBucket')
+
+	def set_DataCacheBucket(self, DataCacheBucket):  # String
+		self.add_query_param('DataCacheBucket', DataCacheBucket)
 	def get_DnsConfigNameServers(self): # RepeatList
 		return self.get_query_params().get('DnsConfigNameServer')
 
@@ -405,6 +460,12 @@ class ModifyEciScalingConfigurationRequest(RpcRequest):
 						self.add_query_param('InitContainer.' + str(depth1 + 1) + '.InitContainerVolumeMount.'  + str(depth2 + 1) + '.SubPath', InitContainer[depth1].get('InitContainerVolumeMount')[depth2].get('SubPath'))
 			if InitContainer[depth1].get('SecurityContext.ReadOnlyRootFilesystem') is not None:
 				self.add_query_param('InitContainer.' + str(depth1 + 1) + '.SecurityContext.ReadOnlyRootFilesystem', InitContainer[depth1].get('SecurityContext.ReadOnlyRootFilesystem'))
+	def get_InstanceTypes(self): # RepeatList
+		return self.get_query_params().get('InstanceType')
+
+	def set_InstanceTypes(self, InstanceType):  # RepeatList
+		for depth1 in range(len(InstanceType)):
+			self.add_query_param('InstanceType.' + str(depth1 + 1), InstanceType[depth1])
 	def get_TerminationGracePeriodSeconds(self): # Long
 		return self.get_query_params().get('TerminationGracePeriodSeconds')
 

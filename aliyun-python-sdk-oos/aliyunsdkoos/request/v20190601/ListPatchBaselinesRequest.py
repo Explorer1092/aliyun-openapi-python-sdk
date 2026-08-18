@@ -37,6 +37,11 @@ class ListPatchBaselinesRequest(RpcRequest):
 
 	def set_Sources(self, Sources):  # Array
 		self.add_query_param("Sources", json.dumps(Sources))
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_NextToken(self): # String
 		return self.get_query_params().get('NextToken')
 

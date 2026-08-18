@@ -41,6 +41,11 @@ class GetQueryOptimizeSolutionRequest(RpcRequest):
 
 	def set_RuleIds(self, RuleIds):  # String
 		self.add_query_param('RuleIds', RuleIds)
+	def get_InstanceId(self): # String
+		return self.get_query_params().get('InstanceId')
+
+	def set_InstanceId(self, InstanceId):  # String
+		self.add_query_param('InstanceId', InstanceId)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

@@ -31,11 +31,21 @@ class StartInstanceRequest(RpcRequest):
 
 	def set_App(self, App):  # String
 		self.add_query_param('App', App)
+	def get_TextRequest(self): # Struct
+		return self.get_query_params().get('TextRequest')
+
+	def set_TextRequest(self, TextRequest):  # Struct
+		self.add_query_param("TextRequest", json.dumps(TextRequest))
 	def get_TenantId(self): # Long
 		return self.get_query_params().get('TenantId')
 
 	def set_TenantId(self, TenantId):  # Long
 		self.add_query_param('TenantId', TenantId)
+	def get_BizId(self): # String
+		return self.get_query_params().get('BizId')
+
+	def set_BizId(self, BizId):  # String
+		self.add_query_param('BizId', BizId)
 	def get_Channel(self): # Struct
 		return self.get_query_params().get('Channel')
 

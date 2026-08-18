@@ -45,3 +45,8 @@ class DescribeEventRuleListRequest(RpcRequest):
 
 	def set_GroupId(self, GroupId):  # String
 		self.add_query_param('GroupId', GroupId)
+	def get_IsEnable(self): # Boolean
+		return self.get_query_params().get('IsEnable')
+
+	def set_IsEnable(self, IsEnable):  # Boolean
+		self.add_query_param('IsEnable', IsEnable)

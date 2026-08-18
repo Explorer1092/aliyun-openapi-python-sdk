@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class UpdateHanaBackupSettingRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaBackupSetting')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'UpdateHanaBackupSetting','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -32,16 +32,21 @@ class UpdateHanaBackupSettingRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_LogBackupParameterFile(self): # String
-		return self.get_query_params().get('LogBackupParameterFile')
-
-	def set_LogBackupParameterFile(self, LogBackupParameterFile):  # String
-		self.add_query_param('LogBackupParameterFile', LogBackupParameterFile)
 	def get_VaultId(self): # String
 		return self.get_query_params().get('VaultId')
 
 	def set_VaultId(self, VaultId):  # String
 		self.add_query_param('VaultId', VaultId)
+	def get_EnableAutoLogBackup(self): # Boolean
+		return self.get_query_params().get('EnableAutoLogBackup')
+
+	def set_EnableAutoLogBackup(self, EnableAutoLogBackup):  # Boolean
+		self.add_query_param('EnableAutoLogBackup', EnableAutoLogBackup)
+	def get_LogBackupParameterFile(self): # String
+		return self.get_query_params().get('LogBackupParameterFile')
+
+	def set_LogBackupParameterFile(self, LogBackupParameterFile):  # String
+		self.add_query_param('LogBackupParameterFile', LogBackupParameterFile)
 	def get_LogBackupTimeout(self): # Long
 		return self.get_query_params().get('LogBackupTimeout')
 
@@ -57,11 +62,6 @@ class UpdateHanaBackupSettingRequest(RpcRequest):
 
 	def set_ClusterId(self, ClusterId):  # String
 		self.add_query_param('ClusterId', ClusterId)
-	def get_EnableAutoLogBackup(self): # Boolean
-		return self.get_query_params().get('EnableAutoLogBackup')
-
-	def set_EnableAutoLogBackup(self, EnableAutoLogBackup):  # Boolean
-		self.add_query_param('EnableAutoLogBackup', EnableAutoLogBackup)
 	def get_LogBackupUsingBackint(self): # Boolean
 		return self.get_query_params().get('LogBackupUsingBackint')
 

@@ -25,16 +25,16 @@ class GetVccRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'GetVcc','eflo')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_PageNumber(self): # Integer
 		return self.get_body_params().get('PageNumber')
 
 	def set_PageNumber(self, PageNumber):  # Integer
 		self.add_body_params('PageNumber', PageNumber)
-	def get_EnablePage(self): # Boolean
-		return self.get_body_params().get('EnablePage')
-
-	def set_EnablePage(self, EnablePage):  # Boolean
-		self.add_body_params('EnablePage', EnablePage)
 	def get_PageSize(self): # Integer
 		return self.get_body_params().get('PageSize')
 
@@ -45,3 +45,8 @@ class GetVccRequest(RpcRequest):
 
 	def set_VccId(self, VccId):  # String
 		self.add_body_params('VccId', VccId)
+	def get_EnablePage(self): # Boolean
+		return self.get_body_params().get('EnablePage')
+
+	def set_EnablePage(self, EnablePage):  # Boolean
+		self.add_body_params('EnablePage', EnablePage)

@@ -36,6 +36,11 @@ class ReleaseLindormInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_Immediately(self): # Boolean
+		return self.get_query_params().get('Immediately')
+
+	def set_Immediately(self, Immediately):  # Boolean
+		self.add_query_param('Immediately', Immediately)
 	def get_SecurityToken(self): # String
 		return self.get_query_params().get('SecurityToken')
 

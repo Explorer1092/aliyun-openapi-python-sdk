@@ -24,7 +24,7 @@ import json
 class CreateChatappTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'CreateChatappTemplate')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'CreateChatappTemplate','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -82,3 +82,8 @@ class CreateChatappTemplateRequest(RpcRequest):
 
 	def set_Category(self, Category):  # String
 		self.add_body_params('Category', Category)
+	def get_MessageSendTtlSeconds(self): # Integer
+		return self.get_body_params().get('MessageSendTtlSeconds')
+
+	def set_MessageSendTtlSeconds(self, MessageSendTtlSeconds):  # Integer
+		self.add_body_params('MessageSendTtlSeconds', MessageSendTtlSeconds)

@@ -1,3 +1,43 @@
+2024-12-12 Version: 1.53.12
+- Supported Pageable of ListDataLakeDatabase API.
+
+2024-11-27 Version: 1.53.11
+- Support ListDataLakeCatalog, ListDataLakeDatabase, ListDataLakeTablebaseInfo, GetDataLakeCatalog, GetDataLakeDatabase, GetDataLakeTable API.
+
+2024-08-02 Version: 1.53.10
+- Support switch login user
+
+2024-04-26 Version: 1.53.9
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
+2024-04-18 Version: 1.53.8
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
+2023-12-06 Version: 1.53.7
+- Support CreateProcCorrectOrder request param of ExecMode.
+
+2023-10-19 Version: 1.53.6
+- Support CreateAuthorityTemplate, UpdateAuthorityTemplate, GetAuthorityTemplateItem, GetAuthorityTemplate return TenantId information.
+
+2023-10-12 Version: 1.53.5
+- Support GetOrderBaseInfo to response AttachmentKey and OriginAttachmentName information.
+
+2023-10-11 Version: 1.53.4
+- Support CreateProcCorrectAPI.
+
+2023-10-10 Version: 1.53.3
+- Support CreateProcCorrectAPI.
+
+2023-09-28 Version: 1.53.2
+- Support CreateProcCorrectAPI.
+
+2023-09-20 Version: 1.53.1
+- Support CreateProcCorrectAPI.
+
 2023-07-12 Version: 1.53.0
 - Change API CreateDataArchiveOrder and GetDataArchiveCount to public.
 

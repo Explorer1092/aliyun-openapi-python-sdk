@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class CreateAccountRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateAccount')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'CreateAccount','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -76,3 +76,8 @@ class CreateAccountRequest(RpcRequest):
 
 	def set_AccountPassword(self, AccountPassword):  # String
 		self.add_query_param('AccountPassword', AccountPassword)
+	def get_CheckPolicy(self): # Boolean
+		return self.get_query_params().get('CheckPolicy')
+
+	def set_CheckPolicy(self, CheckPolicy):  # Boolean
+		self.add_query_param('CheckPolicy', CheckPolicy)

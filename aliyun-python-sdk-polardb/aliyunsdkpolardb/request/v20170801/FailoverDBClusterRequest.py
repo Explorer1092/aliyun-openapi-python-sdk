@@ -41,6 +41,11 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_ClientToken(self, ClientToken):  # String
 		self.add_query_param('ClientToken', ClientToken)
+	def get_RollBackForDisaster(self): # Boolean
+		return self.get_query_params().get('RollBackForDisaster')
+
+	def set_RollBackForDisaster(self, RollBackForDisaster):  # Boolean
+		self.add_query_param('RollBackForDisaster', RollBackForDisaster)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -56,6 +61,11 @@ class FailoverDBClusterRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_TargetZoneType(self): # String
+		return self.get_query_params().get('TargetZoneType')
+
+	def set_TargetZoneType(self, TargetZoneType):  # String
+		self.add_query_param('TargetZoneType', TargetZoneType)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 

@@ -70,16 +70,31 @@ class CreateARMServerInstancesRequest(RpcRequest):
 
 	def set_ServerType(self, ServerType):  # String
 		self.add_query_param('ServerType', ServerType)
+	def get_AutoUseCoupon(self): # Boolean
+		return self.get_query_params().get('AutoUseCoupon')
+
+	def set_AutoUseCoupon(self, AutoUseCoupon):  # Boolean
+		self.add_query_param('AutoUseCoupon', AutoUseCoupon)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_Cidr(self): # String
+		return self.get_query_params().get('Cidr')
+
+	def set_Cidr(self, Cidr):  # String
+		self.add_query_param('Cidr', Cidr)
 	def get_Amount(self): # Integer
 		return self.get_query_params().get('Amount')
 
 	def set_Amount(self, Amount):  # Integer
 		self.add_query_param('Amount', Amount)
+	def get_EnvironmentVar(self): # String
+		return self.get_query_params().get('EnvironmentVar')
+
+	def set_EnvironmentVar(self, EnvironmentVar):  # String
+		self.add_query_param('EnvironmentVar', EnvironmentVar)
 	def get_NameSpace(self): # String
 		return self.get_query_params().get('NameSpace')
 

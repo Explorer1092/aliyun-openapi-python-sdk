@@ -41,6 +41,17 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_HttpPutResponseHopLimit(self): # Integer
+		return self.get_query_params().get('HttpPutResponseHopLimit')
+
+	def set_HttpPutResponseHopLimit(self, HttpPutResponseHopLimit):  # Integer
+		self.add_query_param('HttpPutResponseHopLimit', HttpPutResponseHopLimit)
+	def get_SecurityOptions(self): # Struct
+		return self.get_query_params().get('SecurityOptions')
+
+	def set_SecurityOptions(self, SecurityOptions):  # Struct
+		if SecurityOptions.get('TrustedSystemMode') is not None:
+			self.add_query_param('SecurityOptions.TrustedSystemMode', SecurityOptions.get('TrustedSystemMode'))
 	def get_SecurityEnhancementStrategy(self): # String
 		return self.get_query_params().get('SecurityEnhancementStrategy')
 
@@ -81,6 +92,12 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_HostName(self, HostName):  # String
 		self.add_query_param('HostName', HostName)
+	def get_ImageOptions(self): # Struct
+		return self.get_query_params().get('ImageOptions')
+
+	def set_ImageOptions(self, ImageOptions):  # Struct
+		if ImageOptions.get('LoginAsNonRoot') is not None:
+			self.add_query_param('ImageOptions.LoginAsNonRoot', ImageOptions.get('LoginAsNonRoot'))
 	def get_SystemDiskIops(self): # Integer
 		return self.get_query_params().get('SystemDisk.Iops')
 
@@ -100,6 +117,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_SystemDiskAutoSnapshotPolicyId(self, SystemDiskAutoSnapshotPolicyId):  # String
 		self.add_query_param('SystemDisk.AutoSnapshotPolicyId', SystemDiskAutoSnapshotPolicyId)
+	def get_AutoRenewPeriod(self): # Integer
+		return self.get_query_params().get('AutoRenewPeriod')
+
+	def set_AutoRenewPeriod(self, AutoRenewPeriod):  # Integer
+		self.add_query_param('AutoRenewPeriod', AutoRenewPeriod)
 	def get_Period(self): # Integer
 		return self.get_query_params().get('Period')
 
@@ -140,11 +162,21 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_SystemDiskBurstingEnabled(self, SystemDiskBurstingEnabled):  # Boolean
 		self.add_query_param('SystemDisk.BurstingEnabled', SystemDiskBurstingEnabled)
+	def get_PeriodUnit(self): # String
+		return self.get_query_params().get('PeriodUnit')
+
+	def set_PeriodUnit(self, PeriodUnit):  # String
+		self.add_query_param('PeriodUnit', PeriodUnit)
 	def get_InstanceName(self): # String
 		return self.get_query_params().get('InstanceName')
 
 	def set_InstanceName(self, InstanceName):  # String
 		self.add_query_param('InstanceName', InstanceName)
+	def get_AutoRenew(self): # Boolean
+		return self.get_query_params().get('AutoRenew')
+
+	def set_AutoRenew(self, AutoRenew):  # Boolean
+		self.add_query_param('AutoRenew', AutoRenew)
 	def get_InternetChargeType(self): # String
 		return self.get_query_params().get('InternetChargeType')
 
@@ -195,6 +227,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_Description(self, Description):  # String
 		self.add_query_param('Description', Description)
+	def get_SystemDiskKMSKeyId(self): # String
+		return self.get_query_params().get('SystemDisk.KMSKeyId')
+
+	def set_SystemDiskKMSKeyId(self, SystemDiskKMSKeyId):  # String
+		self.add_query_param('SystemDisk.KMSKeyId', SystemDiskKMSKeyId)
 	def get_SystemDiskCategory(self): # String
 		return self.get_query_params().get('SystemDisk.Category')
 
@@ -215,6 +252,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_PasswordInherit(self, PasswordInherit):  # Boolean
 		self.add_query_param('PasswordInherit', PasswordInherit)
+	def get_HttpEndpoint(self): # String
+		return self.get_query_params().get('HttpEndpoint')
+
+	def set_HttpEndpoint(self, HttpEndpoint):  # String
+		self.add_query_param('HttpEndpoint', HttpEndpoint)
 	def get_InstanceType(self): # String
 		return self.get_query_params().get('InstanceType')
 
@@ -257,6 +299,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.InstanceType', NetworkInterface[depth1].get('InstanceType'))
 			if NetworkInterface[depth1].get('NetworkInterfaceTrafficMode') is not None:
 				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.NetworkInterfaceTrafficMode', NetworkInterface[depth1].get('NetworkInterfaceTrafficMode'))
+			if NetworkInterface[depth1].get('DeleteOnRelease') is not None:
+				self.add_query_param('NetworkInterface.' + str(depth1 + 1) + '.DeleteOnRelease', NetworkInterface[depth1].get('DeleteOnRelease'))
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -282,6 +326,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_AutoReleaseTime(self, AutoReleaseTime):  # String
 		self.add_query_param('AutoReleaseTime', AutoReleaseTime)
+	def get_CreditSpecification(self): # String
+		return self.get_query_params().get('CreditSpecification')
+
+	def set_CreditSpecification(self, CreditSpecification):  # String
+		self.add_query_param('CreditSpecification', CreditSpecification)
 	def get_SpotDuration(self): # Integer
 		return self.get_query_params().get('SpotDuration')
 
@@ -322,6 +371,8 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.BurstingEnabled', DataDisk[depth1].get('BurstingEnabled'))
 			if DataDisk[depth1].get('AutoSnapshotPolicyId') is not None:
 				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.AutoSnapshotPolicyId', DataDisk[depth1].get('AutoSnapshotPolicyId'))
+			if DataDisk[depth1].get('KMSKeyId') is not None:
+				self.add_query_param('DataDisk.' + str(depth1 + 1) + '.KMSKeyId', DataDisk[depth1].get('KMSKeyId'))
 	def get_SystemDiskProvisionedIops(self): # Long
 		return self.get_query_params().get('SystemDisk.ProvisionedIops')
 
@@ -337,6 +388,11 @@ class CreateLaunchTemplateVersionRequest(RpcRequest):
 
 	def set_VpcId(self, VpcId):  # String
 		self.add_query_param('VpcId', VpcId)
+	def get_HttpTokens(self): # String
+		return self.get_query_params().get('HttpTokens')
+
+	def set_HttpTokens(self, HttpTokens):  # String
+		self.add_query_param('HttpTokens', HttpTokens)
 	def get_SystemDiskDescription(self): # String
 		return self.get_query_params().get('SystemDisk.Description')
 

@@ -23,7 +23,7 @@ from aliyunsdkhbr.endpoint import endpoint_data
 class CreateClientsRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateClients')
+		RpcRequest.__init__(self, 'hbr', '2017-09-08', 'CreateClients','hbr')
 		self.set_protocol_type('https')
 		self.set_method('POST')
 
@@ -42,6 +42,16 @@ class CreateClientsRequest(RpcRequest):
 
 	def set_ClientInfo(self, ClientInfo):  # String
 		self.add_query_param('ClientInfo', ClientInfo)
+	def get_CrossAccountType(self): # String
+		return self.get_query_params().get('CrossAccountType')
+
+	def set_CrossAccountType(self, CrossAccountType):  # String
+		self.add_query_param('CrossAccountType', CrossAccountType)
+	def get_CrossAccountRoleName(self): # String
+		return self.get_query_params().get('CrossAccountRoleName')
+
+	def set_CrossAccountRoleName(self, CrossAccountRoleName):  # String
+		self.add_query_param('CrossAccountRoleName', CrossAccountRoleName)
 	def get_AlertSetting(self): # String
 		return self.get_query_params().get('AlertSetting')
 
@@ -57,3 +67,8 @@ class CreateClientsRequest(RpcRequest):
 
 	def set_UseHttps(self, UseHttps):  # Boolean
 		self.add_query_param('UseHttps', UseHttps)
+	def get_CrossAccountUserId(self): # Long
+		return self.get_query_params().get('CrossAccountUserId')
+
+	def set_CrossAccountUserId(self, CrossAccountUserId):  # Long
+		self.add_query_param('CrossAccountUserId', CrossAccountUserId)

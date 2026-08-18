@@ -25,6 +25,11 @@ class UnAssignPrivateIpAddressRequest(RpcRequest):
 		RpcRequest.__init__(self, 'eflo', '2022-05-30', 'UnAssignPrivateIpAddress','eflo')
 		self.set_method('POST')
 
+	def get_ClientToken(self): # String
+		return self.get_body_params().get('ClientToken')
+
+	def set_ClientToken(self, ClientToken):  # String
+		self.add_body_params('ClientToken', ClientToken)
 	def get_SubnetId(self): # String
 		return self.get_body_params().get('SubnetId')
 

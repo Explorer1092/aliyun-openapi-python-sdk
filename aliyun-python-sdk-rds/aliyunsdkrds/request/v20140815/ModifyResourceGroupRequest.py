@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class ModifyResourceGroupRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyResourceGroup')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'ModifyResourceGroup','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -66,3 +66,8 @@ class ModifyResourceGroupRequest(RpcRequest):
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_ResourceType(self): # String
+		return self.get_query_params().get('ResourceType')
+
+	def set_ResourceType(self, ResourceType):  # String
+		self.add_query_param('ResourceType', ResourceType)

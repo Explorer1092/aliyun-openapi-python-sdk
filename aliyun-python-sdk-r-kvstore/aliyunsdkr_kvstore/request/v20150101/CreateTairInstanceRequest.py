@@ -36,11 +36,21 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ConnectionStringPrefix(self): # String
+		return self.get_query_params().get('ConnectionStringPrefix')
+
+	def set_ConnectionStringPrefix(self, ConnectionStringPrefix):  # String
+		self.add_query_param('ConnectionStringPrefix', ConnectionStringPrefix)
 	def get_SecondaryZoneId(self): # String
 		return self.get_query_params().get('SecondaryZoneId')
 
 	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
 		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
+	def get_SlaveReadOnlyCount(self): # Integer
+		return self.get_query_params().get('SlaveReadOnlyCount')
+
+	def set_SlaveReadOnlyCount(self, SlaveReadOnlyCount):  # Integer
+		self.add_query_param('SlaveReadOnlyCount', SlaveReadOnlyCount)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
@@ -155,6 +165,11 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_ZoneId(self, ZoneId):  # String
 		self.add_query_param('ZoneId', ZoneId)
+	def get_ReplicaCount(self): # Integer
+		return self.get_query_params().get('ReplicaCount')
+
+	def set_ReplicaCount(self, ReplicaCount):  # Integer
+		self.add_query_param('ReplicaCount', ReplicaCount)
 	def get_ClientToken(self): # String
 		return self.get_query_params().get('ClientToken')
 
@@ -180,6 +195,11 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_InstanceType(self, InstanceType):  # String
 		self.add_query_param('InstanceType', InstanceType)
+	def get_RestoreTime(self): # String
+		return self.get_query_params().get('RestoreTime')
+
+	def set_RestoreTime(self, RestoreTime):  # String
+		self.add_query_param('RestoreTime', RestoreTime)
 	def get_AutoPay(self): # Boolean
 		return self.get_query_params().get('AutoPay')
 
@@ -200,11 +220,21 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_RecoverConfigMode(self): # String
+		return self.get_query_params().get('RecoverConfigMode')
+
+	def set_RecoverConfigMode(self, RecoverConfigMode):  # String
+		self.add_query_param('RecoverConfigMode', RecoverConfigMode)
 	def get_GlobalInstanceId(self): # String
 		return self.get_query_params().get('GlobalInstanceId')
 
 	def set_GlobalInstanceId(self, GlobalInstanceId):  # String
 		self.add_query_param('GlobalInstanceId', GlobalInstanceId)
+	def get_ParamGroupId(self): # String
+		return self.get_query_params().get('ParamGroupId')
+
+	def set_ParamGroupId(self, ParamGroupId):  # String
+		self.add_query_param('ParamGroupId', ParamGroupId)
 	def get_VpcId(self): # String
 		return self.get_query_params().get('VpcId')
 
@@ -220,3 +250,13 @@ class CreateTairInstanceRequest(RpcRequest):
 
 	def set_ChargeType(self, ChargeType):  # String
 		self.add_query_param('ChargeType', ChargeType)
+	def get_SlaveReplicaCount(self): # Integer
+		return self.get_query_params().get('SlaveReplicaCount')
+
+	def set_SlaveReplicaCount(self, SlaveReplicaCount):  # Integer
+		self.add_query_param('SlaveReplicaCount', SlaveReplicaCount)
+	def get_ClusterBackupId(self): # String
+		return self.get_query_params().get('ClusterBackupId')
+
+	def set_ClusterBackupId(self, ClusterBackupId):  # String
+		self.add_query_param('ClusterBackupId', ClusterBackupId)

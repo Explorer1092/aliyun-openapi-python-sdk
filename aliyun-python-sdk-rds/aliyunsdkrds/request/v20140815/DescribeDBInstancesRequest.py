@@ -23,7 +23,7 @@ from aliyunsdkrds.endpoint import endpoint_data
 class DescribeDBInstancesRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstances')
+		RpcRequest.__init__(self, 'Rds', '2014-08-15', 'DescribeDBInstances','rds')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -126,6 +126,11 @@ class DescribeDBInstancesRequest(RpcRequest):
 
 	def set_Expired(self, Expired):  # String
 		self.add_query_param('Expired', Expired)
+	def get_QueryAutoRenewal(self): # Boolean
+		return self.get_query_params().get('QueryAutoRenewal')
+
+	def set_QueryAutoRenewal(self, QueryAutoRenewal):  # Boolean
+		self.add_query_param('QueryAutoRenewal', QueryAutoRenewal)
 	def get_Engine(self): # String
 		return self.get_query_params().get('Engine')
 

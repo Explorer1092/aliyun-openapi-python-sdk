@@ -19,6 +19,7 @@
 
 from aliyunsdkcore.request import RpcRequest
 from aliyunsdkecs.endpoint import endpoint_data
+import json
 
 class CreateDiagnosticReportRequest(RpcRequest):
 
@@ -31,23 +32,28 @@ class CreateDiagnosticReportRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
-	def get_ResourceId(self): # String
-		return self.get_query_params().get('ResourceId')
-
-	def set_ResourceId(self, ResourceId):  # String
-		self.add_query_param('ResourceId', ResourceId)
 	def get_MetricSetId(self): # String
 		return self.get_query_params().get('MetricSetId')
 
 	def set_MetricSetId(self, MetricSetId):  # String
 		self.add_query_param('MetricSetId', MetricSetId)
-	def get_EndTime(self): # String
-		return self.get_query_params().get('EndTime')
-
-	def set_EndTime(self, EndTime):  # String
-		self.add_query_param('EndTime', EndTime)
 	def get_StartTime(self): # String
 		return self.get_query_params().get('StartTime')
 
 	def set_StartTime(self, StartTime):  # String
 		self.add_query_param('StartTime', StartTime)
+	def get_ResourceId(self): # String
+		return self.get_query_params().get('ResourceId')
+
+	def set_ResourceId(self, ResourceId):  # String
+		self.add_query_param('ResourceId', ResourceId)
+	def get_EndTime(self): # String
+		return self.get_query_params().get('EndTime')
+
+	def set_EndTime(self, EndTime):  # String
+		self.add_query_param('EndTime', EndTime)
+	def get_AdditionalOptions(self): # Map
+		return self.get_query_params().get('AdditionalOptions')
+
+	def set_AdditionalOptions(self, AdditionalOptions):  # Map
+		self.add_query_param("AdditionalOptions", json.dumps(AdditionalOptions))

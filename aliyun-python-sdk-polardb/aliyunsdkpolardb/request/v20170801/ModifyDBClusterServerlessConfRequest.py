@@ -41,21 +41,56 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_ResourceOwnerId(self, ResourceOwnerId):  # Long
 		self.add_query_param('ResourceOwnerId', ResourceOwnerId)
+	def get_ServerlessRuleMode(self): # String
+		return self.get_query_params().get('ServerlessRuleMode')
+
+	def set_ServerlessRuleMode(self, ServerlessRuleMode):  # String
+		self.add_query_param('ServerlessRuleMode', ServerlessRuleMode)
+	def get_ScaleApRoNumMax(self): # String
+		return self.get_query_params().get('ScaleApRoNumMax')
+
+	def set_ScaleApRoNumMax(self, ScaleApRoNumMax):  # String
+		self.add_query_param('ScaleApRoNumMax', ScaleApRoNumMax)
 	def get_ScaleMax(self): # String
 		return self.get_query_params().get('ScaleMax')
 
 	def set_ScaleMax(self, ScaleMax):  # String
 		self.add_query_param('ScaleMax', ScaleMax)
+	def get_PlannedEndTime(self): # String
+		return self.get_query_params().get('PlannedEndTime')
+
+	def set_PlannedEndTime(self, PlannedEndTime):  # String
+		self.add_query_param('PlannedEndTime', PlannedEndTime)
+	def get_ServerlessRuleCpuEnlargeThreshold(self): # String
+		return self.get_query_params().get('ServerlessRuleCpuEnlargeThreshold')
+
+	def set_ServerlessRuleCpuEnlargeThreshold(self, ServerlessRuleCpuEnlargeThreshold):  # String
+		self.add_query_param('ServerlessRuleCpuEnlargeThreshold', ServerlessRuleCpuEnlargeThreshold)
 	def get_SecondsUntilAutoPause(self): # String
 		return self.get_query_params().get('SecondsUntilAutoPause')
 
 	def set_SecondsUntilAutoPause(self, SecondsUntilAutoPause):  # String
 		self.add_query_param('SecondsUntilAutoPause', SecondsUntilAutoPause)
+	def get_ScaleApRoNumMin(self): # String
+		return self.get_query_params().get('ScaleApRoNumMin')
+
+	def set_ScaleApRoNumMin(self, ScaleApRoNumMin):  # String
+		self.add_query_param('ScaleApRoNumMin', ScaleApRoNumMin)
+	def get_TaskId(self): # String
+		return self.get_query_params().get('TaskId')
+
+	def set_TaskId(self, TaskId):  # String
+		self.add_query_param('TaskId', TaskId)
 	def get_ScaleMin(self): # String
 		return self.get_query_params().get('ScaleMin')
 
 	def set_ScaleMin(self, ScaleMin):  # String
 		self.add_query_param('ScaleMin', ScaleMin)
+	def get_CrontabJobId(self): # String
+		return self.get_query_params().get('CrontabJobId')
+
+	def set_CrontabJobId(self, CrontabJobId):  # String
+		self.add_query_param('CrontabJobId', CrontabJobId)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 
@@ -71,11 +106,21 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_OwnerAccount(self, OwnerAccount):  # String
 		self.add_query_param('OwnerAccount', OwnerAccount)
+	def get_ServerlessRuleCpuShrinkThreshold(self): # String
+		return self.get_query_params().get('ServerlessRuleCpuShrinkThreshold')
+
+	def set_ServerlessRuleCpuShrinkThreshold(self, ServerlessRuleCpuShrinkThreshold):  # String
+		self.add_query_param('ServerlessRuleCpuShrinkThreshold', ServerlessRuleCpuShrinkThreshold)
 	def get_OwnerId(self): # Long
 		return self.get_query_params().get('OwnerId')
 
 	def set_OwnerId(self, OwnerId):  # Long
 		self.add_query_param('OwnerId', OwnerId)
+	def get_PlannedStartTime(self): # String
+		return self.get_query_params().get('PlannedStartTime')
+
+	def set_PlannedStartTime(self, PlannedStartTime):  # String
+		self.add_query_param('PlannedStartTime', PlannedStartTime)
 	def get_ScaleRoNumMin(self): # String
 		return self.get_query_params().get('ScaleRoNumMin')
 
@@ -86,3 +131,8 @@ class ModifyDBClusterServerlessConfRequest(RpcRequest):
 
 	def set_AllowShutDown(self, AllowShutDown):  # String
 		self.add_query_param('AllowShutDown', AllowShutDown)
+	def get_FromTimeService(self): # Boolean
+		return self.get_query_params().get('FromTimeService')
+
+	def set_FromTimeService(self, FromTimeService):  # Boolean
+		self.add_query_param('FromTimeService', FromTimeService)

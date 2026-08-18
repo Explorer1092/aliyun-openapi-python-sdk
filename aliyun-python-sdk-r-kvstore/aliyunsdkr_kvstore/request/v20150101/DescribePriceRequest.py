@@ -46,11 +46,21 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_Instances(self, Instances):  # String
 		self.add_query_param('Instances', Instances)
+	def get_SecondaryZoneId(self): # String
+		return self.get_query_params().get('SecondaryZoneId')
+
+	def set_SecondaryZoneId(self, SecondaryZoneId):  # String
+		self.add_query_param('SecondaryZoneId', SecondaryZoneId)
 	def get_CouponNo(self): # String
 		return self.get_query_params().get('CouponNo')
 
 	def set_CouponNo(self, CouponNo):  # String
 		self.add_query_param('CouponNo', CouponNo)
+	def get_EngineVersion(self): # String
+		return self.get_query_params().get('EngineVersion')
+
+	def set_EngineVersion(self, EngineVersion):  # String
+		self.add_query_param('EngineVersion', EngineVersion)
 	def get_InstanceClass(self): # String
 		return self.get_query_params().get('InstanceClass')
 
@@ -71,6 +81,11 @@ class DescribePriceRequest(RpcRequest):
 
 	def set_BusinessInfo(self, BusinessInfo):  # String
 		self.add_query_param('BusinessInfo', BusinessInfo)
+	def get_ShardCount(self): # Integer
+		return self.get_query_params().get('ShardCount')
+
+	def set_ShardCount(self, ShardCount):  # Integer
+		self.add_query_param('ShardCount', ShardCount)
 	def get_Period(self): # Long
 		return self.get_query_params().get('Period')
 

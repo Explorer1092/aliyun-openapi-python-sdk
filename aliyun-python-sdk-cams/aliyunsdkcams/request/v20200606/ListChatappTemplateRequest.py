@@ -24,7 +24,7 @@ import json
 class ListChatappTemplateRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListChatappTemplate')
+		RpcRequest.__init__(self, 'cams', '2020-06-06', 'ListChatappTemplate','cams')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -32,6 +32,11 @@ class ListChatappTemplateRequest(RpcRequest):
 		if hasattr(self, "endpoint_regional"):
 			setattr(self, "endpoint_regional", endpoint_data.getEndpointRegional())
 
+	def get_Code(self): # String
+		return self.get_query_params().get('Code')
+
+	def set_Code(self, Code):  # String
+		self.add_query_param('Code', Code)
 	def get_Language(self): # String
 		return self.get_query_params().get('Language')
 

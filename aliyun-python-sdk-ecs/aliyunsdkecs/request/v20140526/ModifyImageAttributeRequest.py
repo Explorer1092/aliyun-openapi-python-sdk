@@ -52,6 +52,8 @@ class ModifyImageAttributeRequest(RpcRequest):
 	def set_Features(self, Features):  # Struct
 		if Features.get('NvmeSupport') is not None:
 			self.add_query_param('Features.NvmeSupport', Features.get('NvmeSupport'))
+		if Features.get('ImdsSupport') is not None:
+			self.add_query_param('Features.ImdsSupport', Features.get('ImdsSupport'))
 	def get_BootMode(self): # String
 		return self.get_query_params().get('BootMode')
 
@@ -67,6 +69,11 @@ class ModifyImageAttributeRequest(RpcRequest):
 
 	def set_LicenseType(self, LicenseType):  # String
 		self.add_query_param('LicenseType', LicenseType)
+	def get_DryRun(self): # Boolean
+		return self.get_query_params().get('DryRun')
+
+	def set_DryRun(self, DryRun):  # Boolean
+		self.add_query_param('DryRun', DryRun)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

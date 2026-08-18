@@ -23,7 +23,7 @@ from aliyunsdkconfig.endpoint import endpoint_data
 class UpdateConfigDeliveryChannelRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigDeliveryChannel')
+		RpcRequest.__init__(self, 'Config', '2020-09-07', 'UpdateConfigDeliveryChannel','config')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -66,6 +66,11 @@ class UpdateConfigDeliveryChannelRequest(RpcRequest):
 
 	def set_ConfigurationItemChangeNotification(self, ConfigurationItemChangeNotification):  # Boolean
 		self.add_query_param('ConfigurationItemChangeNotification', ConfigurationItemChangeNotification)
+	def get_CompliantSnapshot(self): # Boolean
+		return self.get_query_params().get('CompliantSnapshot')
+
+	def set_CompliantSnapshot(self, CompliantSnapshot):  # Boolean
+		self.add_query_param('CompliantSnapshot', CompliantSnapshot)
 	def get_DeliveryChannelName(self): # String
 		return self.get_query_params().get('DeliveryChannelName')
 

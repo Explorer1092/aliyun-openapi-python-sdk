@@ -32,7 +32,7 @@ class CloneExperimentRequest(RoaRequest):
 	def set_body(self, body):  # String
 		self.add_body_params('body', body)
 	def get_ExperimentId(self): # String
-		return self.get_query_params().get('ExperimentId')
+		return self.get_path_params().get('ExperimentId')
 
 	def set_ExperimentId(self, ExperimentId):  # String
-		self.add_query_param('ExperimentId', ExperimentId)
+		self.add_path_param('ExperimentId', ExperimentId)

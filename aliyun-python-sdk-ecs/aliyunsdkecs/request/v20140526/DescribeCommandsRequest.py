@@ -56,11 +56,21 @@ class DescribeCommandsRequest(RpcRequest):
 
 	def set_PageNumber(self, PageNumber):  # Long
 		self.add_query_param('PageNumber', PageNumber)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
 	def get_Provider(self): # String
 		return self.get_query_params().get('Provider')
 
 	def set_Provider(self, Provider):  # String
 		self.add_query_param('Provider', Provider)
+	def get_NextToken(self): # String
+		return self.get_query_params().get('NextToken')
+
+	def set_NextToken(self, NextToken):  # String
+		self.add_query_param('NextToken', NextToken)
 	def get_ContentEncoding(self): # String
 		return self.get_query_params().get('ContentEncoding')
 
@@ -76,10 +86,10 @@ class DescribeCommandsRequest(RpcRequest):
 
 	def set_Tags(self, Tag):  # RepeatList
 		for depth1 in range(len(Tag)):
-			if Tag[depth1].get('Key') is not None:
-				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 			if Tag[depth1].get('Value') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
+			if Tag[depth1].get('Key') is not None:
+				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
 	def get_Latest(self): # Boolean
 		return self.get_query_params().get('Latest')
 
@@ -105,3 +115,8 @@ class DescribeCommandsRequest(RpcRequest):
 
 	def set_Name(self, Name):  # String
 		self.add_query_param('Name', Name)
+	def get_MaxResults(self): # Integer
+		return self.get_query_params().get('MaxResults')
+
+	def set_MaxResults(self, MaxResults):  # Integer
+		self.add_query_param('MaxResults', MaxResults)

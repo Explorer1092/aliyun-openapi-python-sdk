@@ -46,6 +46,16 @@ class UpdateExecutionRequest(RpcRequest):
 
 	def set_ExecutionId(self, ExecutionId):  # String
 		self.add_query_param('ExecutionId', ExecutionId)
+	def get_ResourceGroupId(self): # String
+		return self.get_query_params().get('ResourceGroupId')
+
+	def set_ResourceGroupId(self, ResourceGroupId):  # String
+		self.add_query_param('ResourceGroupId', ResourceGroupId)
+	def get_Tags(self): # String
+		return self.get_query_params().get('Tags')
+
+	def set_Tags(self, Tags):  # String
+		self.add_query_param('Tags', Tags)
 	def get_Parameters(self): # String
 		return self.get_query_params().get('Parameters')
 

@@ -78,11 +78,22 @@ class CreateScalingGroupRequest(RpcRequest):
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Value', Tag[depth1].get('Value'))
 			if Tag[depth1].get('Key') is not None:
 				self.add_query_param('Tag.' + str(depth1 + 1) + '.Key', Tag[depth1].get('Key'))
+	def get_StopInstanceTimeout(self): # Integer
+		return self.get_query_params().get('StopInstanceTimeout')
+
+	def set_StopInstanceTimeout(self, StopInstanceTimeout):  # Integer
+		self.add_query_param('StopInstanceTimeout', StopInstanceTimeout)
 	def get_DefaultCooldown(self): # Integer
 		return self.get_query_params().get('DefaultCooldown')
 
 	def set_DefaultCooldown(self, DefaultCooldown):  # Integer
 		self.add_query_param('DefaultCooldown', DefaultCooldown)
+	def get_HealthCheckTypess(self): # RepeatList
+		return self.get_query_params().get('HealthCheckTypes')
+
+	def set_HealthCheckTypess(self, HealthCheckTypes):  # RepeatList
+		for depth1 in range(len(HealthCheckTypes)):
+			self.add_query_param('HealthCheckTypes.' + str(depth1 + 1), HealthCheckTypes[depth1])
 	def get_ContainerGroupId(self): # String
 		return self.get_query_params().get('ContainerGroupId')
 
@@ -137,6 +148,20 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_CompensateWithOnDemand(self, CompensateWithOnDemand):  # Boolean
 		self.add_query_param('CompensateWithOnDemand', CompensateWithOnDemand)
+	def get_CapacityOptions(self): # Struct
+		return self.get_query_params().get('CapacityOptions')
+
+	def set_CapacityOptions(self, CapacityOptions):  # Struct
+		if CapacityOptions.get('CompensateWithOnDemand') is not None:
+			self.add_query_param('CapacityOptions.CompensateWithOnDemand', CapacityOptions.get('CompensateWithOnDemand'))
+		if CapacityOptions.get('PriceComparisonMode') is not None:
+			self.add_query_param('CapacityOptions.PriceComparisonMode', CapacityOptions.get('PriceComparisonMode'))
+		if CapacityOptions.get('OnDemandBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandBaseCapacity', CapacityOptions.get('OnDemandBaseCapacity'))
+		if CapacityOptions.get('SpotAutoReplaceOnDemand') is not None:
+			self.add_query_param('CapacityOptions.SpotAutoReplaceOnDemand', CapacityOptions.get('SpotAutoReplaceOnDemand'))
+		if CapacityOptions.get('OnDemandPercentageAboveBaseCapacity') is not None:
+			self.add_query_param('CapacityOptions.OnDemandPercentageAboveBaseCapacity', CapacityOptions.get('OnDemandPercentageAboveBaseCapacity'))
 	def get_MinSize(self): # Integer
 		return self.get_query_params().get('MinSize')
 
@@ -264,6 +289,17 @@ class CreateScalingGroupRequest(RpcRequest):
 
 	def set_SpotInstancePools(self, SpotInstancePools):  # Integer
 		self.add_query_param('SpotInstancePools', SpotInstancePools)
+	def get_DBInstances(self): # RepeatList
+		return self.get_query_params().get('DBInstance')
+
+	def set_DBInstances(self, DBInstance):  # RepeatList
+		for depth1 in range(len(DBInstance)):
+			if DBInstance[depth1].get('DBInstanceId') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.DBInstanceId', DBInstance[depth1].get('DBInstanceId'))
+			if DBInstance[depth1].get('Type') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.Type', DBInstance[depth1].get('Type'))
+			if DBInstance[depth1].get('AttachMode') is not None:
+				self.add_query_param('DBInstance.' + str(depth1 + 1) + '.AttachMode', DBInstance[depth1].get('AttachMode'))
 	def get_GroupDeletionProtection(self): # Boolean
 		return self.get_query_params().get('GroupDeletionProtection')
 

@@ -23,7 +23,7 @@ from aliyunsdkschedulerx2.endpoint import endpoint_data
 class RetryJobInstanceRequest(RpcRequest):
 
 	def __init__(self):
-		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'RetryJobInstance')
+		RpcRequest.__init__(self, 'schedulerx2', '2019-04-30', 'RetryJobInstance','schedulerx2')
 		self.set_method('POST')
 
 		if hasattr(self, "endpoint_map"):
@@ -36,16 +36,16 @@ class RetryJobInstanceRequest(RpcRequest):
 
 	def set_NamespaceSource(self, NamespaceSource):  # String
 		self.add_query_param('NamespaceSource', NamespaceSource)
-	def get_GroupId(self): # String
-		return self.get_query_params().get('GroupId')
-
-	def set_GroupId(self, GroupId):  # String
-		self.add_query_param('GroupId', GroupId)
 	def get_JobId(self): # Long
 		return self.get_query_params().get('JobId')
 
 	def set_JobId(self, JobId):  # Long
 		self.add_query_param('JobId', JobId)
+	def get_GroupId(self): # String
+		return self.get_query_params().get('GroupId')
+
+	def set_GroupId(self, GroupId):  # String
+		self.add_query_param('GroupId', GroupId)
 	def get_Namespace(self): # String
 		return self.get_query_params().get('Namespace')
 

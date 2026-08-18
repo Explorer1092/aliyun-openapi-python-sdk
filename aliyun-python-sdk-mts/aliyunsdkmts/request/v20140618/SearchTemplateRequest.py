@@ -51,6 +51,11 @@ class SearchTemplateRequest(RpcRequest):
 
 	def set_State(self, State):  # String
 		self.add_query_param('State', State)
+	def get_NamePrefix(self): # String
+		return self.get_query_params().get('NamePrefix')
+
+	def set_NamePrefix(self, NamePrefix):  # String
+		self.add_query_param('NamePrefix', NamePrefix)
 	def get_ResourceOwnerAccount(self): # String
 		return self.get_query_params().get('ResourceOwnerAccount')
 

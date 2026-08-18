@@ -51,6 +51,11 @@ class DescribeDcdnUserDomainsByFuncRequest(RpcRequest):
 
 	def set_PageSize(self, PageSize):  # Integer
 		self.add_query_param('PageSize', PageSize)
+	def get_MatchType(self): # String
+		return self.get_query_params().get('MatchType')
+
+	def set_MatchType(self, MatchType):  # String
+		self.add_query_param('MatchType', MatchType)
 	def get_FuncId(self): # Integer
 		return self.get_query_params().get('FuncId')
 

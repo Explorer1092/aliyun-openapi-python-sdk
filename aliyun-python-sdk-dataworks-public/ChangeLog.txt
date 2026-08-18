@@ -1,3 +1,48 @@
+2026-03-06 Version: 5.0.4
+- Add GetDataServiceConfig.
+
+2025-04-27 Version: 6.1.12
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-04-07 Version: 6.1.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2025-03-27 Version: 6.1.10
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-11-21 Version: 6.1.7
+- Support CreateDISyncTask with large param.
+
+2024-10-17 Version: 5.1.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-29 Version: 5.1.10
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-03 Version: 5.1.8
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-09-03 Version: 5.1.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-07-31 Version: 5.1.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2024-06-07 Version: 5.0.3
+- Add timeMachine.
+
+2024-06-07 Version: 5.0.2
+- Add timeMachine.
+
+2024-02-28 Version: 5.0.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-12-11 Version: 5.0.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2023-09-25 Version: 4.2.13
+- Support DIJob and DIAlarmRule related APIs.
+
 2023-07-17 Version: 4.2.12
 - Generated 2020-05-18 for `dataworks-public`.
 

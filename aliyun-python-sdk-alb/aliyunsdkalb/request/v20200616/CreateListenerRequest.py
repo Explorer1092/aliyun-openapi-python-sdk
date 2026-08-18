@@ -54,6 +54,15 @@ class CreateListenerRequest(RpcRequest):
 
 	def set_Http2Enabled(self, Http2Enabled):  # Boolean
 		self.add_query_param('Http2Enabled', Http2Enabled)
+	def get_Tag(self): # Array
+		return self.get_query_params().get('Tag')
+
+	def set_Tag(self, Tag):  # Array
+		for index1, value1 in enumerate(Tag):
+			if value1.get('Value') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Value', value1.get('Value'))
+			if value1.get('Key') is not None:
+				self.add_query_param('Tag.' + str(index1 + 1) + '.Key', value1.get('Key'))
 	def get_DefaultActions(self): # Array
 		return self.get_query_params().get('DefaultActions')
 
@@ -100,6 +109,10 @@ class CreateListenerRequest(RpcRequest):
 			self.add_query_param('XForwardedForConfig.XForwardedForClientSourceIpsEnabled', XForwardedForConfig.get('XForwardedForClientSourceIpsEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertIssuerDNEnabled', XForwardedForConfig.get('XForwardedForClientCertIssuerDNEnabled'))
+		if XForwardedForConfig.get('XForwardedForHostEnabled') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForHostEnabled', XForwardedForConfig.get('XForwardedForHostEnabled'))
+		if XForwardedForConfig.get('XForwardedForProcessingMode') is not None:
+			self.add_query_param('XForwardedForConfig.XForwardedForProcessingMode', XForwardedForConfig.get('XForwardedForProcessingMode'))
 		if XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled') is not None:
 			self.add_query_param('XForwardedForConfig.XForwardedForClientCertFingerprintEnabled', XForwardedForConfig.get('XForwardedForClientCertFingerprintEnabled'))
 		if XForwardedForConfig.get('XForwardedForClientCertIssuerDNAlias') is not None:
